@@ -1,0 +1,6 @@
+*.css.map
+/assets/.sass-cache/*
+.sass-cache/*
+*.scssc
+/assets/css/main.css
+*.png
