@@ -1,5 +1,7 @@
 <?php 
 
+require 'includes/cpt.php';
+
 // For loading in stylesheets, jquery, java, etc
 
 	function theme_scripts() {
