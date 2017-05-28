@@ -14,12 +14,12 @@
 	<div id="fade"></div>
 
 	<header id="header">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
-				<div class="col-xs-9 col-sm-6">
+				<div class="col-xs-9 col-sm-4">
 					<a href="<?php bloginfo("url"); ?>"><h2><?php bloginfo('site_name'); ?></h2></a>
 				</div>
-				<div class="hidden-xs col-sm-6 fullmenu">
+				<div class="hidden-xs col-sm-8 fullmenu">
 					<?php wp_nav_menu(); ?>
 				</div>
 				<nav>
