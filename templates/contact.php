@@ -12,7 +12,8 @@ get_header(); ?>
 
 					while ( have_posts() ) : the_post(); ?>
 
-						<?php get_template_part( 'partials/content', 'contact' ); ?>
+						<h3><?php the_title(); ?></h3>
+						<?php the_content(); ?>
 
 					<?php endwhile; ?>
 
