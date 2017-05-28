@@ -18,4 +18,19 @@
 
 
 
+// Header Size on Scroll
+
+$(window).scroll(function() {
+		var scroll = $(window).scrollTop();
+
+		if (scroll >= 100) {
+			$("#header").addClass("smaller");
+		} 
+		else {
+			$("#header").removeClass("smaller");
+		}
+	});
+
+
+
 }(jQuery);
