@@ -73,6 +73,12 @@
 			color: $black;
 			font-size: 30px;
 			line-height: 70px;
+
+			.fa-bars,
+			.fa-times {
+				float: right;
+				line-height: 70px;
+			}
 		}
 
 		.responsive-menu {
@@ -100,7 +106,6 @@
 				padding: 4px;
 				text-align: center;
 				cursor: pointer;
-				border-bottom: 1px solid $black;
 				width: 100%;
 			}
 		}
