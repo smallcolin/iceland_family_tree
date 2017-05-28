@@ -18,6 +18,7 @@
           <div class="row">
             <div class="col-xs-12">
               <?php the_content(); ?>
+              SOME WORDS FOR CONTEXT
             </div>
           </div>
         </div>
@@ -28,6 +29,7 @@
           <div class="row">
             <div class="col-xs-12">
               <?php the_post_thumbnail(); ?>
+              <div style="background-image: url('<?php echo get_template_directory_uri().'/assets/img/akureyri_winter.jpg'; ?>'); height: 500px;"></div>
             </div>
           </div>
         </div>
