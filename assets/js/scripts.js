@@ -3,16 +3,16 @@
 // Responsive Menu
 
 	$(".menu-icon").click(function() {
-		$(".responsive-menu").toggle();
+		$(".responsive-menu").fadeToggle();
 		$(this).children().toggleClass("fa-bars fa-times");
-		$("#fade").toggle();
+		// $("#fade").toggle();
 	});
 
-	$("#fade").click(function() {
-		$("#fade").slideUp();
-		$(".responsive-menu").slideUp();
-		$(".menu-icon").children().toggleClass("fa-bars fa-times");
-	});
+	// $("#fade").click(function() {
+	// 	$("#fade").slideUp();
+	// 	$(".responsive-menu").slideUp();
+	// 	$(".menu-icon").children().toggleClass("fa-bars fa-times");
+	// });
 
 // Scroll to top button
 
@@ -25,7 +25,7 @@ $(window).scroll(function() {
 
 		if (scroll >= 100) {
 			$("#header").addClass("smaller");
-		} 
+		}
 		else {
 			$("#header").removeClass("smaller");
 		}
