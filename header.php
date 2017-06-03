@@ -11,12 +11,10 @@
 
 <body <?php body_class(); ?>>
 
-	<div id="fade"></div>
-
 	<header id="header">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-xs-9 col-sm-4">
+				<div class="col-xs-8 col-sm-4">
 					<a href="<?php bloginfo("url"); ?>"><h2><?php bloginfo('site_name'); ?></h2></a>
 				</div>
 				<div class="hidden-xs col-sm-8 fullmenu">
@@ -32,11 +30,6 @@
 				</nav>
 			</div>
 		</div>
-		</div>
-		</div>
-		</div>
 	</header>
 
-	<main>
-
-
+	<main id="main">
