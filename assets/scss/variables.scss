@@ -28,3 +28,17 @@ $test: 20px 0;
 $varela: "Varela Round", sans-serif;
 $iceland: "Iceland", cursive;
 $primaryFont: Arial, Helvetica, sans-serif;
+
+// MIXINS
+
+@mixin aligncenter {
+  text-align: center;
+}
+
+@mixin clearfix() {
+	&:after {
+		clear: both;
+		content: "";
+		display: block;
+	}
+}
