@@ -40,6 +40,7 @@
 
 	.responsive-menu {
 		display: none;
+		z-index: 15;
 		#menu-header-menu-1.menu {
 			background-color: $brown;
 		 	@include aligncenter;

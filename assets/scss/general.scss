@@ -13,7 +13,7 @@ body {
 
 #main {
 	display: block;
-  padding-top: 70px;
+  padding-top: 0;
 	@include clearfix;
 }
 
@@ -29,3 +29,12 @@ a {
 }
 
 // RANDOM ID's
+
+
+// MEDIA QUERIES
+
+@media ( min-width: 768px ) {
+	#main {
+		padding-top: 70px;
+	}
+}
