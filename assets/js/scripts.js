@@ -3,7 +3,7 @@
 // Responsive Menu
 
 	$(".menu-icon").click(function() {
-		$(".responsive-menu").fadeToggle();
+		$(".responsive-menu").fadeToggle("slow", "linear");
 		$(this).children().toggleClass("fa-bars fa-times");
 		// $("#fade").toggle();
 	});
