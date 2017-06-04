@@ -28,8 +28,10 @@
                   <td class="right"><h3><?php if ( $name ) { echo $name; } ?></h3></td>
                 </tr>
                 <tr>
-                  <td>Date of Birth</td>
-                  <td class="right"><?php if ( $dob ) { echo $dob; } ?></td>
+                  <?php if ($dob) { ?>
+                    <td>Date of Birth</td>
+                    <td class="right"><?php echo $dob; ?></td>
+                  <?php } ?>
                 </tr>
                 <tr>
                   <td>Address</td>
@@ -45,20 +47,22 @@
                 </tr>
                 <tr>
                   <td>Country</td>
-                  <td class="right"><?php if ( $country ) { echo $country; } ?></td>
+                  <td class="right"><?php echo cpt_categories(); ?></td>
                 </tr>
                 <tr>
-                  <td>Occupation</td>
-                  <td class="right"><?php if ( $job ) { echo $job; } ?></td>
+                  <?php if ( $job ) { ?>
+                    <td>Occupation</td>
+                    <td class="right"><?php echo $job; ?></td>
+                  <?php } ?>
                 </tr>
                 <tr>
-                  <td>Partner</td>
-                  <td class="right">
-                    <?php if (get_field('partner')) { ?>
-                      <a href="<?php the_permalink(get_field('partner')); ?>"><?php echo get_the_title(get_field('partner')); ?></a>
-                    <?php }
-                    ?>
-                  </td>
+                  <?php if (get_field('partner')) { ?>
+                    <td>Partner</td>
+                    <td class="right">
+                        <a href="<?php the_permalink(get_field('partner')); ?>"><?php echo get_the_title(get_field('partner')); ?></a>
+                      <?php }
+                      ?>
+                    </td>
                 </tr>
               </tbody>
             </table>
