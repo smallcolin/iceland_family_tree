@@ -1,0 +1,64 @@
+section.archives {
+  .thumbs {
+    background: {
+      size: cover;
+      position: center center;
+      repeat: no-repeat;
+    }
+    box-shadow: $shade;
+    margin-bottom: 20px;
+    height: 150px;
+
+    .filter {
+      transition: .5s ease-out;
+      height: 100%;
+      width: 100%;
+      &:hover {
+        background: rgba(255,255,255,0.7);
+      }
+    }
+    &:hover {
+      .hidden-title {
+        visibility: visible;
+      }
+    }
+
+    .mobile-title {
+      background: rgba(0,0,0,0.4);
+      font-size: 18px;
+      color: $white; 
+      position: absolute;
+      bottom: 20px;
+      padding: 2px 0 0;
+    }
+  }
+}
+
+// MEDIA QUERIES
+
+@media ( min-width: 768px ) {
+  section.archives {
+    .thumbs {
+      height: 240px;
+
+      .hidden-title {
+        font-size: 20px;
+        visibility: hidden;
+        color: $black;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+        left: 0;
+        right: 0;
+        text-transform: uppercase;
+        a {
+          color: $black;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
