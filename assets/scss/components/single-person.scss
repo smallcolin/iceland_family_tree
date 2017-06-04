@@ -1,5 +1,5 @@
 .single-person {
-  background-color: $pink;
+  background-color: $white;
   padding: 40px 0;
   .person-image {
     margin: 0 auto;
@@ -8,16 +8,21 @@
   }
   .person-details {
     margin: 30px auto;
-
     list-style: none;
     td {
-      padding: 0 20px;
+      padding: 0 30px;
     }
+    h3 {
+      margin: 0 0 10px;
+    }
+  }
+  h2 {
+    margin-bottom: 40px;
   }
 }
 
 // MEDIA QUERIES
 
 @media ( min-width: 768px ) {
-  
+
 }
