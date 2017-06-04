@@ -18,6 +18,9 @@ body {
 
 a {
 	color: $black;
+	&:hover {
+		color: $tan;
+	}
 }
 
 
