@@ -1,6 +1,7 @@
-<?php 
+<?php
 
 require 'includes/cpt.php';
+require 'includes/custom.php';
 
 // For loading in stylesheets, jquery, java, etc
 
@@ -20,7 +21,7 @@ require 'includes/cpt.php';
 
 	function register_my_menu() {
 	 	register_nav_menu('header-menu',__( 'Header Menu' ));
-	} 
+	}
 
 	add_action( 'init', 'register_my_menu' );
 
@@ -49,9 +50,3 @@ require 'includes/cpt.php';
 
  	add_theme_support('post_thumbnails');
  	add_theme_support('customize-selective-refresh-widgets');
-
-
-
-
-
-
