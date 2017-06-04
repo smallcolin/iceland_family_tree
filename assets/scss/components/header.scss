@@ -1,7 +1,6 @@
 #header {
-	background-color: $brown;
+	background-color: $white;
 	// border-bottom: 1px solid $white;
-	color: $white;
 	position: static;
 	// top: 0;
 	left: 0;
@@ -16,7 +15,7 @@
 		transition: 1s ease-out;
 	}
 	a {
-		color: $white;
+		color: $black;
 		transition: 1s ease-out;
 	}
 	.menu {
@@ -35,6 +34,7 @@
 		.fa-times {
 			float: right;
 			line-height: 70px;
+			font-size: 24px;
 		}
 	}
 
@@ -70,7 +70,7 @@
 			padding-left: 30px;
 		}
 		&.smaller {
-			background-color: $yellow;
+			background-color: $white;
 			height: 50px;
 			transition: 1s ease-out;
 			li {

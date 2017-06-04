@@ -22,7 +22,7 @@
 				</div>
 				<nav>
 					<div class="col-xs-3 hidden-sm hidden-md hidden-lg menu-icon">
-						<i class="fa fa-bars"></i>
+						<i class="fa fa-bars fa-2x"></i>
 					</div>
 					<div class="responsive-menu">
 						<?php wp_nav_menu(); ?>
