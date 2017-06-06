@@ -17,9 +17,10 @@
         <div class="row">
           <div class="col-xs-12 col-sm-6"> <!--Person Details-->
             <?php
-              if ($image) {
-                echo '<img src="' . $image . '" class="person-image" />';
-              }
+              if ($image) { ?>
+                <div class="thumbs person-image" style="background-image: url('<?php echo $image; ?>');"></div>
+                <!-- echo '<img src="' . $image . '" class="person-image" />'; -->
+              <?php }
             ?>
             <table class="person-details">
               <tbody>

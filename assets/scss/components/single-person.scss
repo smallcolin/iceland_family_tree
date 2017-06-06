@@ -2,9 +2,15 @@
   background-color: $white;
   padding: 40px 0;
   .person-image {
-    margin: 0 auto;
+    background: {
+      size: cover;
+      position: center center;
+      repeat: no-repeat;
+    }
+    height: 300px;
+    margin: 0 auto 30px;
     width: 100%;
-    box-shadow: $shade;
+    box-shadow: $shadow;
   }
   .person-details {
     margin: 30px auto;
@@ -36,6 +42,18 @@
 
 // MEDIA QUERIES
 
-@media ( min-width: 768px ) {
+@media ( min-width: 470px ) and ( max-width: 768px) {
+  .single-person {
+    .person-image {
+      width: 50%;
+    }
+  }
+}
 
+@media ( min-width: 768px ) {
+  .single-person {
+    .person-image {
+      height: 400px;
+    }
+  }
 }
