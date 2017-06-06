@@ -40,28 +40,29 @@
       </div>
     </div>
   </section>
-  <section class="slides">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 2</div>
-                <div class="swiper-slide">Slide 3</div>
-                <div class="swiper-slide">Slide 4</div>
-                <div class="swiper-slide">Slide 5</div>
-                <div class="swiper-slide">Slide 6</div>
-                <div class="swiper-slide">Slide 7</div>
-                <div class="swiper-slide">Slide 8</div>
-                <div class="swiper-slide">Slide 9</div>
-                <div class="swiper-slide">Slide 10</div>
+  <?php if (have_posts('siblings')) : ?>
+    <section class="slides">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <?php while (have_posts('siblings')) : the_post(); ?>
+                  <?php $image = get_field( 'image' ); ?>
+                  <div class="swiper-slide">
+                    <?php if ( $image ) : ?>
+                      <img src="<?php echo $image; ?>" />
+                    <?php else : ?>
+                      <div style="margin-top: 50px;"></div>
+                    <?php endif; ?>
+                  </div>
+                <?php endwhile; ?>
+              </div>
+              <div class="swiper-pagination"></div>
             </div>
-            <!-- Add Pagination -->
-            <div class="swiper-pagination"></div>
-        </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  <?php endif; ?>
 <?php get_footer(); ?>
