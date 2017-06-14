@@ -40,29 +40,4 @@
       </div>
     </div>
   </section>
-  <?php if (have_posts('siblings')) : ?>
-    <section class="slides">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-xs-12">
-            <div class="swiper-container">
-              <div class="swiper-wrapper">
-                <?php while (have_posts('siblings')) : the_post(); ?>
-                  <?php $image = get_field( 'image' ); ?>
-                  <div class="swiper-slide">
-                    <?php if ( $image ) : ?>
-                      <img src="<?php echo $image; ?>" />
-                    <?php else : ?>
-                      <div style="margin-top: 50px;"></div>
-                    <?php endif; ?>
-                  </div>
-                <?php endwhile; ?>
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  <?php endif; ?>
 <?php get_footer(); ?>
