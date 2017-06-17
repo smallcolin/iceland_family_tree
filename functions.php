@@ -50,5 +50,5 @@ require 'includes/custom.php';
 
 // For editing various elements within Wordpress
 
- 	add_theme_support('post_thumbnails');
+ 	add_theme_support('post-thumbnails', array('post', 'siblings', 'children', 'grandchildren', 'partners'));
  	add_theme_support('customize-selective-refresh-widgets');

@@ -1,6 +1,6 @@
 <?php
 
-  // CUSTOM POST TYPES FOR EACH GENERATION  
+  // CUSTOM POST TYPES FOR EACH GENERATION
 
   function create_post_type() {
     register_post_type('siblings', array(
@@ -11,7 +11,8 @@
       'public' => true,
       'has_archive' => true,
       'menu_position' => 4,
-      'menu_icon' => 'dashicons-groups'
+      'menu_icon' => 'dashicons-groups',
+      'supports' => array('thumbnail')
     ));
     register_post_type('children', array(
       'labels' => array(
@@ -21,7 +22,8 @@
       'public' => true,
       'has_archive' => true,
       'menu_position' => 5,
-      'menu_icon' => 'dashicons-universal-access'
+      'menu_icon' => 'dashicons-universal-access',
+      'supports' => array('thumbnail')
     ));
     register_post_type('grandchildren', array(
       'labels' => array(
@@ -31,7 +33,8 @@
       'public' => true,
       'has_archive' => true,
       'menu_position' => 6,
-      'menu_icon' => 'dashicons-image-filter'
+      'menu_icon' => 'dashicons-image-filter',
+      'supports' => array('thumbnail')
     ));
     register_post_type('partners', array(
       'labels' => array(
@@ -41,7 +44,8 @@
       'public' => true,
       'has_archive' => true,
       'menu_position' => 7,
-      'menu_icon' => 'dashicons-universal-access-alt'
+      'menu_icon' => 'dashicons-universal-access-alt',
+      'supports' => array('thumbnail')
     ));
   }
   add_action('init', 'create_post_type');
@@ -94,7 +98,7 @@
           'show_admin_column' => true,
         )
     );
-  };  
+  };
   add_action('init', 'create_taxonomy');
 
 
