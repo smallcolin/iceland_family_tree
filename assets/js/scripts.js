@@ -20,7 +20,7 @@
 
 // Header Size on Scroll
 
-$(window).scroll(function() {
+	$(window).scroll(function() {
 		var scroll = $(window).scrollTop();
 
 		if (scroll >= 100) {
@@ -33,10 +33,25 @@ $(window).scroll(function() {
 
 // Swiper slideshow
 
-var mySwiper = new Swiper('.swiper-container', {
-	pagination: 'swiper-pagination',
-	paginationClickable: true
-});
+	var mySwiper = new Swiper('.swiper-container', {
+		pagination: '.swiper-pagination',
+		paginationClickable: true,
+		paginationType: 'progress',
+		nextButton: '.swiper-button-next',
+		prevButton: '.swiper-button-prev',
+		grabCursor: true,
+		loop: true,
+		spaceBetween: 30
+		// effect: 'fade'
+	});
+
+	// Retain image opacity on image/link hover
+
+	$(".slide-link").hover(function(){
+		$(this).siblings(".slide-image").css('opacity', '0.6');
+	}, function() {
+		$(this).siblings(".slide-image").css('opacity', '1');
+	});
 
 
 

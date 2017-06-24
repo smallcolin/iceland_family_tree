@@ -70,28 +70,44 @@
           </div>
           <div class="col-xs-12 col-sm-6 aligncenter">  <!-- Family members -->
             <h2>Family</h2>
+
             <!-- SIBLINGS -->
             <h3>Siblings</h3>
-            <?php if (have_rows('siblings')) : ?>
-              <ul class="family-list">
-                <?php while (have_rows('siblings')) : the_row();
-                  if ( get_sub_field('sibling') ) { ?>
-                    <li>
-                      <a href="<?php the_permalink(get_sub_field('sibling')); ?>"><?php echo get_the_title(get_sub_field('sibling')); ?>
-                      </a>
-                    </li>
-                  <?php }
-                endwhile; ?>
-              </ul>
-            <?php endif; ?>
+            <article class="slides">
+              <?php if(have_rows('siblings_2')) : ?>
+                <div class="swiper-container">
+                  <div class="swiper-wrapper">
+                    <?php while(have_rows('siblings_2')) : the_row(); ?>
+                      <div class="swiper-slide">
+                        <?php
+                          $sibling = get_sub_field('sibling');
+                          $sibImage = get_field('image', $sibling->ID);
+                        if ( $sibling ) { ?>
+                          <img class="slide-image" src="<?php echo $sibImage; ?>" />
+                          <a class="slide-link" href="<?php the_permalink($sibling); ?>">
+                            <?php echo get_the_title($sibling); ?>
+                          </a>
+                        <?php } ?>
+                      </div>
+                    <?php endwhile; ?>
+                  </div>
+                  <div class="swiper-button-next hidden-xs"></div>
+                  <div class="swiper-button-prev hidden-xs"></div>
+                  <div class="swiper-pagination"></div>
+                </div>
+              <?php endif; ?>
+            </article>
+
             <!-- CHILDREN -->
             <h3>Children</h3>
             <?php if(have_rows('children')) : ?>
               <ul class="family-list">
                 <?php while(have_rows('children')) : the_row();
-                  if ( get_sub_field('child') ) { ?>
+                  $child = get_sub_field('child');
+                  if ( $child ) { ?>
                     <li>
-                      <a href="<?php the_permalink(get_sub_field('child')); ?>"><?php echo get_the_title(get_sub_field('child')); ?>
+                      <a href="<?php the_permalink($child); ?>">
+                        <?php echo get_the_title($child); ?>
                       </a>
                     </li>
                   <?php }
@@ -103,9 +119,11 @@
             <?php if(have_rows('grandchildren')) : ?>
               <ul class="family-list">
                 <?php while(have_rows('grandchildren')) : the_row();
-                  if ( get_sub_field('grandchild') ) { ?>
+                  $grandchild = get_sub_field('grandchild');
+                  if ( $grandchild ) { ?>
                     <li>
-                      <a href="<?php the_permalink(get_sub_field('grandchild')); ?>"><?php echo get_the_title(get_sub_field('grandchild')); ?>
+                      <a href="<?php the_permalink($grandchild); ?>">
+                        <?php echo get_the_title($grandchild); ?>
                       </a>
                     </li>
                   <?php }
