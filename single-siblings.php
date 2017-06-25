@@ -8,9 +8,7 @@
       $addy_1 = get_field('address_1');
       $addy_2 = get_field('address_2');
       $postcode = get_field('postcode');
-      $country = get_field('country');
       $job = get_field('job');
-      $parent = get_field('parent');
       $partner = get_field('partner');
       $partImage = get_field('image', $partner->ID);
     ?>
@@ -21,7 +19,6 @@
             <?php
               if ($image) { ?>
                 <div class="thumbs person-image" style="background-image: url('<?php echo $image; ?>');"></div>
-                <!-- echo '<img src="' . $image . '" class="person-image" />'; -->
               <?php }
             ?>
             <table class="person-details">
