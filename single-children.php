@@ -21,6 +21,8 @@
                 <div class="thumbs person-image" style="background-image: url('<?php echo $image; ?>');"></div>
               <?php }
             ?>
+          </div>
+          <div class="col-xs-12 col-sm-6">
             <table class="person-details">
               <tbody>
                 <tr>
@@ -59,18 +61,23 @@
                   <?php if ($partner) { ?>
                     <td>Partner</td>
                     <td class="right">
-                      <img class="partner-image" src="<?php echo $partImage; ?>" alt="partner">
                       <a class="partner-link" href="<?php the_permalink($partner); ?>">
                         <?php echo get_the_title($partner); ?>
                       </a>
-                      <?php }
-                      ?>
                     </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td class="right">
+                    <img class="partner-image" src="<?php echo $partImage; ?>" alt="partner">
+                  </td>
+                  <?php } ?>
                 </tr>
               </tbody>
             </table>
           </div>
-          <div class="col-xs-12 col-sm-6 aligncenter">  <!-- Family members -->
+        </div>
+          <div class="col-xs-12 col-sm-3 aligncenter">  <!-- Family members -->
 
             <!-- PARENT -->
             <?php if (have_rows('child_parents')) : ?>
@@ -98,7 +105,8 @@
                 </div>
               </article>
             <?php endif; ?>
-
+          </div>
+          <div class="col-xs-12 col-sm-3 aligncenter">
             <!-- SIBLINGS -->
             <?php if (have_rows('child_siblings')) : ?>
               <h3>Siblings</h3>
@@ -125,7 +133,8 @@
                 </div>
               </article>
             <?php endif; ?>
-
+          </div>
+          <div class="col-xs-12 col-sm-3 aligncenter">
             <!-- CHILDREN -->
             <?php if (have_rows('child_children')) : ?>
               <h3>Children</h3>
@@ -152,7 +161,8 @@
                 </div>
               </article>
             <?php endif; ?>
-
+          </div>
+          <div class="col-xs-12 col-sm-3 aligncenter">
             <!-- RELATIVES -->
             <?php if(have_rows('child_relatives')) : ?>
               <h3>Relatives</h3>
