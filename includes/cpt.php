@@ -12,7 +12,7 @@
       'has_archive' => true,
       'menu_position' => 4,
       'menu_icon' => 'dashicons-groups',
-      'supports' => array('thumbnail')
+      'supports' => array('title', 'thumbnail')
     ));
     register_post_type('children', array(
       'labels' => array(
@@ -23,7 +23,7 @@
       'has_archive' => true,
       'menu_position' => 5,
       'menu_icon' => 'dashicons-universal-access',
-      'supports' => array('thumbnail')
+      'supports' => array('title', 'thumbnail')
     ));
     register_post_type('grandchildren', array(
       'labels' => array(
@@ -34,7 +34,7 @@
       'has_archive' => true,
       'menu_position' => 6,
       'menu_icon' => 'dashicons-image-filter',
-      'supports' => array('thumbnail')
+      'supports' => array('title', 'thumbnail')
     ));
     register_post_type('partners', array(
       'labels' => array(
@@ -45,7 +45,7 @@
       'has_archive' => true,
       'menu_position' => 7,
       'menu_icon' => 'dashicons-universal-access-alt',
-      'supports' => array('thumbnail')
+      'supports' => array('title', 'thumbnail')
     ));
   }
   add_action('init', 'create_post_type');
