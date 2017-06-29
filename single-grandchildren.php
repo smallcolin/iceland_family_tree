@@ -21,6 +21,8 @@
                 <div class="thumbs person-image" style="background-image: url('<?php echo $image; ?>');"></div>
               <?php }
             ?>
+          </div>
+          <div class="col-xs-12- col-sm-6">
             <table class="person-details">
               <tbody>
                 <tr>
@@ -70,11 +72,12 @@
               </tbody>
             </table>
           </div>
-          <div class="col-xs-12 col-sm-6 aligncenter">  <!-- Family members -->
-
+        </div>
+        <div class="row"> <!-- Family members -->
+          <div class="col-xs-12 col-sm-3 aligncenter">
             <!-- PARENT -->
+            <h3>Parents</h3>
             <?php if (have_rows('grandchild_parents')) : ?>
-              <h3>Parents</h3>
               <article class="slides">
                 <div class="swiper-container">
                   <div class="swiper-wrapper">
@@ -97,11 +100,16 @@
                   <div class="swiper-pagination"></div>
                 </div>
               </article>
+            <?php else : ?>
+              <div class="slide-image" placeholder>
+                <p class="no-info">No info available…</p>
+              </div>
             <?php endif; ?>
-
+          </div>
+          <div class="col-xs-12 col-sm-3 aligncenter">
             <!-- SIBLINGS -->
+            <h3>Siblings</h3>
             <?php if (have_rows('grandchild_siblings')) : ?>
-              <h3>Siblings</h3>
               <article class="slides">
                 <div class="swiper-container">
                   <div class="swiper-wrapper">
@@ -124,11 +132,16 @@
                   <div class="swiper-pagination"></div>
                 </div>
               </article>
+            <?php else : ?>
+              <div class="slide-image" placeholder>
+                <p class="no-info">No info available…</p>
+              </div>
             <?php endif; ?>
-
+          </div>
+          <div class="col-xs-12 col-sm-3 aligncenter">
             <!-- GRANDPARENTS -->
+            <h3>Grandparents</h3>
             <?php if (have_rows('grandparents')) : ?>
-              <h3>Grandparents</h3>
               <article class="slides">
                 <div class="swiper-container">
                   <div class="swiper-wrapper">
@@ -151,11 +164,16 @@
                   <div class="swiper-pagination"></div>
                 </div>
               </article>
+            <?php else : ?>
+              <div class="slide-image" placeholder>
+                <p class="no-info">No info available…</p>
+              </div>
             <?php endif; ?>
-
+          </div>
+          <div class="col-xs-12 col-sm-3 aligncenter">
             <!-- RELATIVES -->
+            <h3>Relatives</h3>
             <?php if(have_rows('child_relatives')) : ?>
-              <h3>Relatives</h3>
               <article class="slides">
                 <div class="swiper-container">
                   <div class="swiper-wrapper">
@@ -178,6 +196,10 @@
                   <div class="swiper-pagination"></div>
                 </div>
               </article>
+            <?php else : ?>
+              <div class="slide-image" placeholder>
+                <p class="no-info">No info available…</p>
+              </div>
             <?php endif; ?>
           </div>
         </div>

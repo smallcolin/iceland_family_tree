@@ -21,6 +21,8 @@
                 <div class="thumbs person-image" style="background-image: url('<?php echo $image; ?>');"></div>
               <?php }
             ?>
+          </div>
+          <div class="col-xs-12 col-sm-6">
             <table class="person-details">
               <tbody>
                 <tr>
@@ -59,19 +61,24 @@
                   <?php if ($partner) { ?>
                     <td>Partner</td>
                     <td class="right">
-                      <img class="partner-image" src="<?php echo $partImage; ?>" alt="partner">
                       <a class="partner-link" href="<?php the_permalink($partner); ?>">
                         <?php echo get_the_title($partner); ?>
                       </a>
-                      <?php }
-                      ?>
                     </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td class="right">
+                    <img class="partner-image" src="<?php echo $partImage; ?>" alt="partner">
+                  </td>
+                  <?php } ?>
                 </tr>
               </tbody>
             </table>
           </div>
+        </div>
+        <div class="row">
           <div class="col-xs-12 col-sm-6 aligncenter">  <!-- Family members -->
-
             <!-- CHILDREN -->
             <?php if (have_rows('partner_children')) : ?>
               <h3>Children</h3>
@@ -97,11 +104,16 @@
                   <div class="swiper-pagination"></div>
                 </div>
               </article>
+            <?php else : ?>
+              <div class="slide-image" placeholder>
+                <p class="no-info">No info available…</p>
+              </div>
             <?php endif; ?>
-
+          </div>
+          <div class="col-xs-12 col-sm-6 aligncenter">
             <!-- GRANDCHILDREN -->
+            <h3>Grandchildren</h3>
             <?php if (have_rows('partner_grandchildren')) : ?>
-              <h3>Grandchildren</h3>
               <article class="slides">
                 <div class="swiper-container">
                   <div class="swiper-wrapper">
@@ -124,8 +136,11 @@
                   <div class="swiper-pagination"></div>
                 </div>
               </article>
+            <?php else : ?>
+              <div class="slide-image" placeholder>
+                <p class="no-info">No info available…</p>
+              </div>
             <?php endif; ?>
-
           </div>
         </div>
       </div>

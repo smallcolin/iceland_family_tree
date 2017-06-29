@@ -77,11 +77,11 @@
             </table>
           </div>
         </div>
-          <div class="col-xs-12 col-sm-3 aligncenter">  <!-- Family members -->
-
+        <div class="row"> <!-- Family members -->
+          <div class="col-xs-12 col-sm-3 aligncenter">
             <!-- PARENT -->
+            <h3>Parents</h3>
             <?php if (have_rows('child_parents')) : ?>
-              <h3>Parents</h3>
               <article class="slides">
                 <div class="swiper-container">
                   <div class="swiper-wrapper">
@@ -105,7 +105,6 @@
                 </div>
               </article>
             <?php else : ?>
-              <h3>Parents</h3>
               <div class="slide-image" placeholder>
                 <p class="no-info">No info available…</p>
               </div>
@@ -113,8 +112,8 @@
           </div>
           <div class="col-xs-12 col-sm-3 aligncenter">
             <!-- SIBLINGS -->
+            <h3>Siblings</h3>
             <?php if (have_rows('child_siblings')) : ?>
-              <h3>Siblings</h3>
               <article class="slides">
                 <div class="swiper-container">
                   <div class="swiper-wrapper">
@@ -138,7 +137,6 @@
                 </div>
               </article>
             <?php else : ?>
-              <h3>Siblings</h3>
               <div class="slide-image" placeholder>
                 <p class="no-info">No info available…</p>
               </div>
@@ -146,8 +144,8 @@
           </div>
           <div class="col-xs-12 col-sm-3 aligncenter">
             <!-- CHILDREN -->
+            <h3>Children</h3>
             <?php if (have_rows('child_children')) : ?>
-              <h3>Children</h3>
               <article class="slides">
                 <div class="swiper-container">
                   <div class="swiper-wrapper">
@@ -171,7 +169,6 @@
                 </div>
               </article>
             <?php else : ?>
-              <h3>Children</h3>
               <div class="slide-image" placeholder>
                 <p class="no-info">No info available…</p>
               </div>
@@ -179,8 +176,8 @@
           </div>
           <div class="col-xs-12 col-sm-3 aligncenter">
             <!-- RELATIVES -->
+            <h3>Relatives</h3>
             <?php if(have_rows('child_relatives')) : ?>
-              <h3>Relatives</h3>
               <article class="slides">
                 <div class="swiper-container">
                   <div class="swiper-wrapper">
@@ -204,7 +201,6 @@
                 </div>
               </article>
             <?php else : ?>
-              <h3>Relatives</h3>
               <div class="slide-image" placeholder>
                 <p class="no-info">No info available…</p>
               </div>
