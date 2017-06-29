@@ -20,21 +20,12 @@
       padding: 0 30px;
       position: relative;
       .partner-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        width: 60%;
-        height: 200px;
-        margin: 0 auto;
+        width: 110px;
+        margin-top: 20px;
+        box-shadow: $shadow;
       }
       .partner-link {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        text-align: center;
-        color: $white;
+
       }
     }
     h3 {
@@ -75,7 +66,7 @@ article.slides {
         left: 0;
         right: 0;
         color: $white;
-        width: 15%;
+        width: 25%;
         margin: 0 auto;
         &:hover {
           color: $black;
@@ -102,15 +93,14 @@ article.slides {
   }
 }
 
-// MEDIA QUERIES
-
-@media ( min-width: 470px ) and ( max-width: 768px) {
-  .single-person {
-    .person-image {
-      // width: 100%;  // Maybe 70%, need to heck when I get better pics
-    }
-  }
+.no-info {
+  position: absolute;
+  top: 140px;
+  left: 0;
+  right: 0;
 }
+
+// MEDIA QUERIES
 
 @media ( min-width: 768px ) {
   .single-person {
@@ -120,16 +110,19 @@ article.slides {
     }
   }
   article.slides {
-    height: 250px;
+    height: 180px;
     .swiper-container {
       height: 100%;
       .swiper-slide {
-        height: 250px;
+        height: 180px;
         .slide-image {
-          width: 250px;
-          height: 250px;
+          width: 180px;
+          height: 180px;
         }
       }
+    }
+    .swiper-pagination-progress {
+      width: 180px;
     }
   }
 }
@@ -137,10 +130,10 @@ article.slides {
 @media ( min-width: 992px ) {
   article.slides {
     .swiper-button-next {
-      right: 50px;
+      // right: 50px;
     }
     .swiper-button-prev {
-      left: 50px;
+      // left: 50px;
     }
   }
 }

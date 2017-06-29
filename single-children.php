@@ -104,6 +104,11 @@
                   <div class="swiper-pagination"></div>
                 </div>
               </article>
+            <?php else : ?>
+              <h3>Parents</h3>
+              <div class="slide-image" placeholder>
+                <p class="no-info">No info available…</p>
+              </div>
             <?php endif; ?>
           </div>
           <div class="col-xs-12 col-sm-3 aligncenter">
@@ -132,6 +137,11 @@
                   <div class="swiper-pagination"></div>
                 </div>
               </article>
+            <?php else : ?>
+              <h3>Siblings</h3>
+              <div class="slide-image" placeholder>
+                <p class="no-info">No info available…</p>
+              </div>
             <?php endif; ?>
           </div>
           <div class="col-xs-12 col-sm-3 aligncenter">
@@ -160,6 +170,11 @@
                   <div class="swiper-pagination"></div>
                 </div>
               </article>
+            <?php else : ?>
+              <h3>Children</h3>
+              <div class="slide-image" placeholder>
+                <p class="no-info">No info available…</p>
+              </div>
             <?php endif; ?>
           </div>
           <div class="col-xs-12 col-sm-3 aligncenter">
@@ -188,6 +203,11 @@
                   <div class="swiper-pagination"></div>
                 </div>
               </article>
+            <?php else : ?>
+              <h3>Relatives</h3>
+              <div class="slide-image" placeholder>
+                <p class="no-info">No info available…</p>
+              </div>
             <?php endif; ?>
           </div>
         </div>
