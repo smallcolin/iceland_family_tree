@@ -48,8 +48,8 @@
                   <td class="right"><?php if ( $postcode ) { echo $postcode; } ?></td>
                 </tr>
                 <tr>
-                  <td>Country</td>
-                  <td class="right"><?php echo cpt_categories(); ?></td>
+                  <td>Lives</td>
+                  <td class="right"><?php echo sibling_categories(); ?></td>
                 </tr>
                 <tr>
                   <?php if ( $job ) { ?>

@@ -48,8 +48,8 @@
                   <td class="right"><?php if ( $postcode ) { echo $postcode; } ?></td>
                 </tr>
                 <tr>
-                  <td>Country</td>
-                  <td class="right"><?php echo cpt_categories('children'); ?></td>
+                  <td>Lives</td>
+                  <td class="right"><?php echo grandchildren_categories(); ?></td>
                 </tr>
                 <tr>
                   <?php if ( $job ) { ?>
@@ -74,7 +74,7 @@
           </div>
         </div>
         <div class="row"> <!-- Family members -->
-          <div class="col-xs-12 col-sm-3 aligncenter">
+          <div class="col-xs-12 col-sm-4 aligncenter">
             <!-- PARENT -->
             <h3>Parents</h3>
             <?php if (have_rows('grandchild_parents')) : ?>
@@ -106,7 +106,7 @@
               </div>
             <?php endif; ?>
           </div>
-          <div class="col-xs-12 col-sm-3 aligncenter">
+          <div class="col-xs-12 col-sm-4 aligncenter">
             <!-- SIBLINGS -->
             <h3>Siblings</h3>
             <?php if (have_rows('grandchild_siblings')) : ?>
@@ -138,7 +138,7 @@
               </div>
             <?php endif; ?>
           </div>
-          <div class="col-xs-12 col-sm-3 aligncenter">
+          <div class="col-xs-12 col-sm-4 aligncenter">
             <!-- GRANDPARENTS -->
             <h3>Grandparents</h3>
             <?php if (have_rows('grandparents')) : ?>
@@ -154,38 +154,6 @@
                           <img class="slide-image" src="<?php echo $childImage; ?>" />
                           <a class="slide-link" href="<?php the_permalink($child); ?>">
                             <?php echo get_the_title($child); ?>
-                          </a>
-                        <?php } ?>
-                      </div>
-                    <?php endwhile; ?>
-                  </div>
-                  <div class="swiper-button-next hidden-xs"></div>
-                  <div class="swiper-button-prev hidden-xs"></div>
-                  <div class="swiper-pagination"></div>
-                </div>
-              </article>
-            <?php else : ?>
-              <div class="slide-image" placeholder>
-                <p class="no-info">No info available…</p>
-              </div>
-            <?php endif; ?>
-          </div>
-          <div class="col-xs-12 col-sm-3 aligncenter">
-            <!-- RELATIVES -->
-            <h3>Relatives</h3>
-            <?php if(have_rows('child_relatives')) : ?>
-              <article class="slides">
-                <div class="swiper-container">
-                  <div class="swiper-wrapper">
-                    <?php while(have_rows('child_relatives')) : the_row(); ?>
-                      <div class="swiper-slide">
-                        <?php
-                          $grandchild = get_sub_field('child_relative');
-                          $granImage = get_field('image', $grandchild->ID);
-                        if ( $grandchild ) { ?>
-                          <img class="slide-image" src="<?php echo $granImage; ?>" />
-                          <a class="slide-link" href="<?php the_permalink($grandchild); ?>">
-                            <?php echo get_the_title($grandchild); ?>
                           </a>
                         <?php } ?>
                       </div>
