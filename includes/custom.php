@@ -16,12 +16,72 @@
 
 // Function to call only the selected post type Categories
 
-function cpt_categories() {
+function sibling_categories() {
   $taxonomy = 'siblings_category';
   $cats = get_the_terms( get_the_ID() , $taxonomy);
   $count = count($cats);
   $i = 1;
-  
+
+  if ( $cats ) {
+    foreach ( $cats as $cat ) {
+      echo '<a href="';
+      echo get_term_link($cat->slug, $taxonomy);
+      echo '">';
+      echo $cat->name;
+      if ($i < $count) {
+        echo ', ';
+        $i++;
+      };
+      echo '</a>';
+    }
+  }
+}
+function children_categories() {
+  $taxonomy = 'children_category';
+  $cats = get_the_terms( get_the_ID() , $taxonomy);
+  $count = count($cats);
+  $i = 1;
+
+  if ( $cats ) {
+    foreach ( $cats as $cat ) {
+      echo '<a href="';
+      echo get_term_link($cat->slug, $taxonomy);
+      echo '">';
+      echo $cat->name;
+      if ($i < $count) {
+        echo ', ';
+        $i++;
+      };
+      echo '</a>';
+    }
+  }
+}
+function grandchildren_categories() {
+  $taxonomy = 'grandchildren_category';
+  $cats = get_the_terms( get_the_ID() , $taxonomy);
+  $count = count($cats);
+  $i = 1;
+
+  if ( $cats ) {
+    foreach ( $cats as $cat ) {
+      echo '<a href="';
+      echo get_term_link($cat->slug, $taxonomy);
+      echo '">';
+      echo $cat->name;
+      if ($i < $count) {
+        echo ', ';
+        $i++;
+      };
+      echo '</a>';
+    }
+  }
+}
+function partners_categories() {
+  $taxonomy = 'partners_category';
+  $cats = get_the_terms( get_the_ID() , $taxonomy);
+  $count = count($cats);
+  $i = 1;
+
   if ( $cats ) {
     foreach ( $cats as $cat ) {
       echo '<a href="';
