@@ -19,11 +19,11 @@
 						<h2><?php bloginfo('site_name'); ?></h2>
 					</a>
 				</div>
-				<div class="hidden-xs col-sm-8 fullmenu">
+				<div class="hidden-xs hidden-sm col-md-8 fullmenu">
 					<?php wp_nav_menu(); ?>
 				</div>
 				<nav>
-					<div class="col-xs-3 hidden-sm hidden-md hidden-lg menu-icon">
+					<div class="col-xs-3 col-sm-8 hidden-md hidden-lg menu-icon">
 						<i class="fa fa-bars fa-2x"></i>
 					</div>
 					<div class="responsive-menu">
