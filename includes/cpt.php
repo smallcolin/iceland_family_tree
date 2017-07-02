@@ -55,48 +55,20 @@
 
   function create_taxonomy(){
     register_taxonomy(
-      'siblings_category',
-      'siblings',
+      'category',
+      array(
+        'siblings',
+        'children',
+        'grandchildren',
+        'partners'
+      ),
       array(
         'labels' => array(
-          'name' => 'Sibling Categories'
-          ),
-          'hierarchical' => true,
-          'show_admin_column' => true,
-        )
-    );
-    register_taxonomy(
-      'children_category',
-      'children',
-      array(
-        'labels' => array(
-          'name' => 'Children Categories'
-          ),
-          'hierarchical' => true,
-          'show_admin_column' => true,
-        )
-    );
-    register_taxonomy(
-      'grandchildren_category',
-      'grandchildren',
-      array(
-        'labels' => array(
-          'name' => 'Grandchildren Categories'
-          ),
-          'hierarchical' => true,
-          'show_admin_column' => true,
-        )
-    );
-    register_taxonomy(
-      'partners_category',
-      'partners',
-      array(
-        'labels' => array(
-          'name' => 'Partner Categories'
-          ),
-          'hierarchical' => true,
-          'show_admin_column' => true,
-        )
+          'name' => 'Categories'
+        ),
+        'hierarchical' => true,
+        'show_admin_column' => true
+      )
     );
   };
   add_action('init', 'create_taxonomy');

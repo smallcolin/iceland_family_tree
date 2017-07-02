@@ -49,7 +49,7 @@
                 </tr>
                 <tr>
                   <td>Lives</td>
-                  <td class="right"><?php echo grandchildren_categories(); ?></td>
+                  <td class="right"><?php echo cpt_taxonomy(); ?></td>
                 </tr>
                 <tr>
                   <?php if ( $job ) { ?>
