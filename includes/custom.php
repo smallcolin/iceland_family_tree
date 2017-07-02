@@ -3,7 +3,7 @@
 // Function to call all custom post type Categories
 
 function cpt_taxonomy() {
-  $taxonomy = 'category';
+  $taxonomy = 'country';
   $cats = get_the_terms( get_the_ID() , $taxonomy);
   $count = count($cats);
   $i = 1;

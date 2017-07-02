@@ -55,7 +55,7 @@
 
   function create_taxonomy(){
     register_taxonomy(
-      'category',
+      'country',
       array(
         'siblings',
         'children',
@@ -64,7 +64,7 @@
       ),
       array(
         'labels' => array(
-          'name' => 'Categories'
+          'name' => 'Country of residence'
         ),
         'hierarchical' => true,
         'show_admin_column' => true
