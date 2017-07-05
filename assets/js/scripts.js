@@ -3,16 +3,9 @@
 // Responsive Menu
 
 	$(".menu-icon").click(function() {
-		$(".responsive-menu").fadeToggle("slow", "linear");
+		$(".responsive-menu").fadeToggle();
 		$(this).children().toggleClass("fa-bars fa-times");
-		// $("#fade").toggle();
 	});
-
-	// $("#fade").click(function() {
-	// 	$("#fade").slideUp();
-	// 	$(".responsive-menu").slideUp();
-	// 	$(".menu-icon").children().toggleClass("fa-bars fa-times");
-	// });
 
 // Scroll to top button
 
@@ -20,6 +13,7 @@
 
 // Header Size on Scroll
 
+if ($(window).width() >= 992) {
 	$(window).scroll(function() {
 		var scroll = $(window).scrollTop();
 
@@ -30,6 +24,7 @@
 			$("#header").removeClass("smaller");
 		}
 	});
+}
 
 // Swiper slideshow
 
