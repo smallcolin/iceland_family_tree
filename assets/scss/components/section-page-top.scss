@@ -2,7 +2,24 @@ section.page-top {
   display: block;
   background-color: $black;
   color: $white;
+  margin: 0;
   padding-top: 30px;
+  padding-bottom: 30px;
   min-height: 300px;
+
+  .post-box {
+    margin: 10px;
+  }
 }
 
+
+//  MEDIA QUERIES
+
+@media ( min-width: 992px ) {
+  section.page-top {
+    margin: 30px 60px 0;
+    .post-box {
+      margin: 30px;
+    }
+  }
+}
