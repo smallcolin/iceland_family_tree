@@ -3,7 +3,10 @@
 // Responsive Menu
 
 	$(".menu-icon").click(function() {
-		$(".responsive-menu").fadeToggle();
+		$(".responsive-menu").toggle();
+		// $(".fa-bars").css('transform','rotate(180deg)');
+		// $(".fa-bars").css('transition','.5s linear');
+		// $(this).children().toggleClass("fa-bars fa-bars-spin");
 		$(this).children().toggleClass("fa-bars fa-times");
 	});
 
