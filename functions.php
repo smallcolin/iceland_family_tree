@@ -52,3 +52,14 @@ require 'includes/custom.php';
 
  	add_theme_support('post-thumbnails', array('post', 'siblings', 'children', 'grandchildren', 'partners'));
  	add_theme_support('customize-selective-refresh-widgets');
+
+// Only search for posts, not pages
+
+  function searchFilter($query) {
+    if ($query->is_search) {
+      $query->set('post_type', array('post', 'siblings', 'children', 'grandchildren', 'partners'));
+    }
+    return $query;
+  }
+
+  add_filter('pre_get_posts','searchFilter');
