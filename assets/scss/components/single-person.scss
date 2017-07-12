@@ -105,6 +105,14 @@ article.slides {
 
 // MEDIA QUERIES
 
+@media (min-width: 380px) and (max-width: 768px) {
+  .single-person {
+    .person-image {
+      width: 300px;
+    }
+  }
+}
+
 @media ( min-width: 768px ) {
   .single-person {
     margin-top: 40px;
@@ -133,6 +141,11 @@ article.slides {
 }
 
 @media ( min-width: 992px ) {
+  .single-person {
+    .person-image {
+      width: 400px;
+    }
+  }
   article.slides {
     .swiper-button-next {
       // right: 50px;
