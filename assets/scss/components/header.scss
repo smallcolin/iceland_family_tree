@@ -40,6 +40,14 @@
 		}
 	}
 
+	.search-icon {
+		.fa-search,
+		.fa-ellipsis-h {
+			line-height: 50px;
+			font-size: 20px;
+		}
+	}
+
 	.menu-icon {
 		.fa-bars,
 		.fa-times {
@@ -101,6 +109,13 @@
 				transition: .8s ease-out;
 			}
 		}
+		.search-icon {
+			.fa-search,
+			.fa-ellipsis-h {
+				line-height: 70px;
+			}
+		}
+
 		.menu-icon {
 			.fa-bars,
 			.fa-times {
@@ -120,6 +135,12 @@
 	#header {
 		h2 {
 			line-height: 50px;
+		}
+		.search-icon {
+			.fa-search,
+			.fa-ellipsis-h {
+				line-height: 50px;
+			}
 		}
 	}
 }
