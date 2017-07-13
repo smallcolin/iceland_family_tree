@@ -18,7 +18,7 @@
           while (have_posts()) : the_post();
             $image = get_field('image', $post->ID);
             if (count($posts) > 1) { ?>
-              <div class="col-xs-12 col-sm-4">
+              <div class="col-xs-12 col-sm-3">
                 <a href="<?php echo the_permalink(); ?>">
                   <div class="search-results-box" style="background-image: url('<?php echo $image ?>');">
                     <h3><?php the_title(); ?></h3>
