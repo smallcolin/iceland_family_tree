@@ -1,0 +1,35 @@
+section.splash {
+	height: 100%;
+	a {
+		.front-image {
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			height: 100%;
+		}
+	}
+	.frontpage-title {
+		position: absolute;
+		top: 20%;
+		left: 0;
+		right: 0;
+		font-size: 1em;
+		text-align: center;
+		text-transform: uppercase;
+		color: $white;
+		&:hover {
+			color: $tan;
+		}
+	}
+}
+
+// MEDIA QUERIES
+
+@media (min-width: 768px) {
+	section.splash {
+		.frontpage-title {
+			top: 10%;
+			font-size: 2em;
+		}
+	}
+}
