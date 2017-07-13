@@ -16,15 +16,25 @@
         <?php
         if (have_posts()) :
           while (have_posts()) : the_post();
-            $image = get_field('image', $post->ID); ?>
-            <div class="col-xs-12 col-sm-4">
-              <a href="<?php echo the_permalink(); ?>">
-                <div class="search-results-box" style="background-image: url('<?php echo $image ?>');">
-                  <h3><?php the_title(); ?></h3>
-                </div>
-              </a>
-            </div>
-          <?php endwhile; ?>
+            $image = get_field('image', $post->ID);
+            if (count($posts) > 1) { ?>
+              <div class="col-xs-12 col-sm-4">
+                <a href="<?php echo the_permalink(); ?>">
+                  <div class="search-results-box" style="background-image: url('<?php echo $image ?>');">
+                    <h3><?php the_title(); ?></h3>
+                  </div>
+                </a>
+              </div>
+            <?php } else { ?>
+              <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+                <a href="<?php echo the_permalink(); ?>">
+                  <div class="search-results-box" style="background-image: url('<?php echo $image ?>');">
+                    <h3><?php the_title(); ?></h3>
+                  </div>
+                </a>
+              </div>
+            <?php }
+          endwhile; ?>
       </div>
     </div>
       <?php else : ?>
