@@ -9,32 +9,43 @@
       </div>
       <div class="row">
         <?php
-          if (have_posts('siblings')) :
-            while (have_posts('siblings')) : the_post();
-            $sibling = get_sub_field('sibling');
-            $image = get_field( 'image' );
-          ?>
-            <div class="col-xs-6 col-sm-4 col-md-3 aligncenter">
-              <h3>
-                <a href="<?php the_permalink($sibling); ?>">
+          $posts = get_posts(array(
+            'post_type' => 'siblings',
+            'posts_per_page' => -1,
+            'orderby' => 'name',
+            'order' => 'ASC'
+          ));
+          // if (have_posts('siblings')) :
+          //   while (have_posts('siblings')) : the_post();
+          if ( $posts ) :
+            // $sibling = get_sub_field('sibling');
+            foreach ($posts as $post) {
+              $image = get_field( 'image' );
+              setup_postdata($post) ?>
+              <div class="col-xs-6 col-sm-4 col-md-3 aligncenter">
+                <h3>
+                  <a href="<?php the_permalink(); ?>">
                   <?php if ( $image ) { ?>
                     <div class="thumbs" style="background-image: url('<?php echo $image; ?>');">
                       <!-- Mobile Screen -->
                       <div class="mobile-title visible-xs">
-                        <?php the_title($sibling) ?>
+                        <?php the_title() ?>
                       </div>
                       <!-- Full screen title -->
                       <div class="filter hidden-xs hidden-sm hidden-md">
                         <h2 class="hidden-title">
-                          <?php the_title($sibling); ?>
+                          <?php the_title(); ?>
                         </h2>
                       </div>
                     </div>
-                  <?php } ?>
-                </a>
-              </h3>
-            </div>
-            <?php endwhile;
+                    <?php } ?>
+                  </a>
+                </h3>
+              </div>
+            <?php }
+          ?>
+            <?php //endwhile;
+            wp_reset_postdata();
           endif;
         ?>
       </div>

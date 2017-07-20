@@ -9,11 +9,19 @@
       </div>
       <div class="row">
         <?php
-          if (have_posts('grandchildren')) :
-            while (have_posts('grandchildren')) : the_post();
-            $grandchild = get_sub_field('grandchild');
+          $posts = get_posts(array(
+            'post_type' => 'grandchildren',
+            'posts_per_page' => -1,
+            'orderby' => 'name',
+            'order' => 'ASC'
+          ));
+          // if (have_posts('grandchildren')) :
+          //   while (have_posts('grandchildren')) : the_post();
+          if ( $posts ) :
+          //   $grandchild = get_sub_field('grandchild');
+          foreach ($posts as $post) {
             $image = get_field( 'image' );
-          ?>
+            setup_postdata($posts) ?>
             <div class="col-xs-6 col-sm-4 col-md-3 aligncenter">
               <h3>
                 <a href="<?php the_permalink($grandchild); ?>">
@@ -34,7 +42,10 @@
                 </a>
               </h3>
             </div>
-            <?php endwhile;
+          <?php }
+          ?>
+            <?php //endwhile;
+            wp_reset_postdata();
           endif;
         ?>
       </div>
