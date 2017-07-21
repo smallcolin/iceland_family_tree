@@ -38,6 +38,19 @@
                         </h2>
                       </div>
                     </div>
+                    <?php } else { ?>
+                      <div class="thumbs">
+                        <!-- Mobile Screen -->
+                        <div class="mobile-title visible-xs">
+                          <?php the_title() ?>
+                        </div>
+                        <!-- Full screen title -->
+                        <div class="filter hidden-xs hidden-sm hidden-md">
+                          <h2 class="no-image-title">
+                            <?php the_title(); ?>
+                          </h2>
+                        </div>
+                      </div>
                     <?php } ?>
                   </a>
                 </h3>

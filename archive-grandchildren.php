@@ -24,17 +24,30 @@
             setup_postdata($posts) ?>
             <div class="col-xs-6 col-sm-4 col-md-3 aligncenter">
               <h3>
-                <a href="<?php the_permalink($grandchild); ?>">
+                <a href="<?php the_permalink(); ?>">
                   <?php if ( $image ) { ?>
                     <div class="thumbs" style="background-image: url('<?php echo $image; ?>');">
                       <!-- Mobile Screen -->
                       <div class="mobile-title visible-xs">
-                        <?php the_title($grandchild) ?>
+                        <?php the_title() ?>
                       </div>
                       <!-- Full screen title -->
                       <div class="filter hidden-xs hidden-sm hidden-md">
                         <h2 class="hidden-title">
-                          <?php the_title($grandchild); ?>
+                          <?php the_title(); ?>
+                        </h2>
+                      </div>
+                    </div>
+                  <?php } else { ?>
+                    <div class="thumbs">
+                      <!-- Mobile Screen -->
+                      <div class="mobile-title visible-xs">
+                        <?php the_title() ?>
+                      </div>
+                      <!-- Full screen title -->
+                      <div class="filter hidden-xs hidden-sm hidden-md">
+                        <h2 class="no-image-title">
+                          <?php the_title(); ?>
                         </h2>
                       </div>
                     </div>
