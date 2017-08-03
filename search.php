@@ -36,6 +36,11 @@
             <?php }
           endwhile; ?>
       </div>
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <?php paginator(); ?> <!-- pagination -->
+        </div>
+      </div>
     </div>
       <?php else : ?>
         <div class="container">
@@ -47,7 +52,7 @@
       	  <div class="row">
             <div class="col-xs-12">
               <?php
-                $value = $_GET['s'];
+                $value = $_GET['s'] ? $_GET['s'] : null;
               ?>
               <form class="repeat-searchform aligncenter" action="<?php bloginfo("url");?>" method="get" role="search">
                 <div class="inner-search">

@@ -1,5 +1,5 @@
 <?php
-  $value = $_GET['s']; // Show the last entered search in the input field
+  $value = $_GET['s'] ? $_GET['s'] : null; // Show the last entered search in the input field
 ?>
 <form class="searchform aligncenter" action="<?php bloginfo("url");?>" method="get" role="search">
   <div class="inner-search">
