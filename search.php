@@ -46,9 +46,12 @@
           </div>
       	  <div class="row">
             <div class="col-xs-12">
+              <?php
+                $value = $_GET['s'];
+              ?>
               <form class="repeat-searchform aligncenter" action="<?php bloginfo("url");?>" method="get" role="search">
                 <div class="inner-search">
-                  <input type="text" name="s" id="search-input" placeholder=" ex. Eyrun, Idunn, etc" class="text-input" autofocus />
+                  <input type="text" name="s" id="search-input" placeholder=" ex. Eyrun, Idunn, etc" class="text-input" value="<?php echo $value; ?>" autofocus />
                   <input class="btn btn-danger button detail submit-search" type="submit" value="Search" />
                 </div>
               </form>
