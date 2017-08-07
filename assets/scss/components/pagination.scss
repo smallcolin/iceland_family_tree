@@ -1,0 +1,20 @@
+.pagination {
+	.pages {
+		a {
+			color: $white;
+		}
+		.fa-caret-left {
+			padding-right: 4px;
+		}
+		.fa-caret-right {
+			padding-left: 4px;
+		}
+	}
+	.pages-numbers {
+		a {
+			border-bottom: 2px solid $red;
+			text-align: center;
+			padding: 0 4px;
+		}
+	}
+}
