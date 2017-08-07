@@ -4,3 +4,4 @@
 *.scssc
 /assets/css/main.css
 *.png
+node_modules/
