@@ -50,5 +50,10 @@
 	  </div>
 	</div>
 
+	<div class="">
+		<button onclick="window.location.href='#scroll-logo'" class="top-button">
+			<i class="fa fa-chevron-up fa-2x" aria-hidden="true"></i>
+		</button>
+	</div>
 
 	<main id="main">

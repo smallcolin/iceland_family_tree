@@ -3,28 +3,48 @@
 // Responsive Menu
 
 	$(".menu-icon").click(function() {
-		$(".responsive-menu").toggle();
+		$(".responsive-menu").fadeToggle();
 		$(this).children().toggleClass("fa-bars fa-times");
 	});
 
 // Scroll to top button
 
+	// When clicked the user is taken back to the top of the page
+	var scrollButton = function() {
+		var _scroll = $(window).scrollTop();
+
+		if ( _scroll > 270 ) {
+			$('.top-button').show();
+		}
+		else {
+			$('.top-button').hide();
+		}
+	};
+
+	scrollButton();
+	$(window).scroll(scrollButton);
+
+	$(".top-button").click(function() {
+		$('html, body').animate({
+			scrollTop: 0
+		}, 1200);
+	});
 
 
 // Header Size on Scroll
 
-if ($(window).width() >= 992) {
-	$(window).scroll(function() {
-		var scroll = $(window).scrollTop();
+	if ($(window).width() >= 992) {
+		$(window).scroll(function() {
+			var scroll = $(window).scrollTop();
 
-		if (scroll >= 100) {
-			$("#header").addClass("smaller");
-		}
-		else {
-			$("#header").removeClass("smaller");
-		}
-	});
-}
+			if (scroll >= 100) {
+				$("#header").addClass("smaller");
+			}
+			else {
+				$("#header").removeClass("smaller");
+			}
+		});
+	}
 
 // Swiper slideshow
 
@@ -56,6 +76,14 @@ if ($(window).width() >= 992) {
 		$("#search-input").focus();
 	});
 
+	// All Country taxonomy button
+	//
+	// $("#allCountries").click(function() {
+	// 	console.log('show all countries here');
+	// 	$.ajax({
+	//
+	// 	});
+	// });
 
 
 }(jQuery);
