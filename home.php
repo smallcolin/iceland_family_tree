@@ -15,27 +15,7 @@
           </div>
         </div>
       </section>
-
-      <section class="home-middle">
-        <div class="container">
-          <div class="row">
-            <div class="col-xs-12">
-
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="home-bottom">
-        <div class="container">
-          <div class="row">
-            <div class="col-xs-12">
-              <?php the_post_thumbnail(); ?>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      
     <?php endwhile;
   endif;
 

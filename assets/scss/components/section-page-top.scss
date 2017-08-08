@@ -1,14 +1,14 @@
 section.page-top {
   display: block;
-  background-color: $black;
-  color: $white;
+  background-color: $white;
+  color: $black;
   margin: 0 0 30px;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  min-height: 300px;
 
   .post-box {
+    border-bottom: 2px solid $brown;
+    // min-height: 300px;
     margin: 10px;
+    padding-bottom: 30px;
   }
 }
 
@@ -19,7 +19,7 @@ section.page-top {
   section.page-top {
     margin: 30px 60px 0;
     .post-box {
-      margin: 30px;
+      margin: 30px 30px 0;
     }
   }
 }
