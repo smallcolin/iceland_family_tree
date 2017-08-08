@@ -57,9 +57,33 @@ require 'includes/custom.php';
 
   function searchFilter($query) {
     if ($query->is_search) {
-      $query->set('post_type', array('post', 'siblings', 'children', 'grandchildren', 'partners'));
+      $query->set('post_type', array('siblings', 'children', 'grandchildren', 'partners'));
     }
     return $query;
   }
 
   add_filter('pre_get_posts','searchFilter');
+
+// Arrange main (Taxonomy) loop into alphabetical order & show all posts
+
+	function modify_tax_query_order( $query ) {
+    if ( $query->is_tax('country') && $query->is_main_query() ) {
+        $query->set( 'orderby', 'name' );
+        $query->set( 'order', 'ASC' );
+				$query->set( 'posts_per_page', 8 ); // Shows how many posts or persons on one page
+    }
+	}
+
+	add_action( 'pre_get_posts', 'modify_tax_query_order' );
+
+// Show all posts when doing a search
+
+	function show_all_search( $query ) {
+		if ( $query->is_search() && $query->is_main_query() ) {
+			$query->set( 'orderby', 'name' );
+			$query->set( 'order', 'ASC' );
+			$query->set( 'posts_per_page', 8 );
+		}
+	}
+
+	add_action( 'pre_get_posts', 'show_all_search' );
