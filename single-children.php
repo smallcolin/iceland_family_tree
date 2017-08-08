@@ -81,8 +81,8 @@
           <div class="col-xs-12 col-sm-3 aligncenter">
             <!-- PARENT -->
             <h3>Parents</h3>
-            <?php if (have_rows('child_parents')) : ?>
-              <article class="slides">
+            <article class="slides">
+              <?php if (have_rows('child_parents')) : ?>
                 <div class="swiper-container">
                   <div class="swiper-wrapper">
                     <?php while(have_rows('child_parents')) : the_row(); ?>
@@ -103,18 +103,18 @@
                   <div class="swiper-button-prev hidden-xs"></div>
                   <div class="swiper-pagination"></div>
                 </div>
-              </article>
-            <?php else : ?>
-              <div class="slide-image" placeholder>
-                <p class="no-info">No info available…</p>
-              </div>
-            <?php endif; ?>
+              <?php else : ?>
+                <div class="slide-image" placeholder>
+                  <p class="no-info">No info available…</p>
+                </div>
+              <?php endif; ?>
+            </article>
           </div>
           <div class="col-xs-12 col-sm-3 aligncenter">
             <!-- SIBLINGS -->
             <h3>Siblings</h3>
-            <?php if (have_rows('child_siblings')) : ?>
-              <article class="slides">
+            <article class="slides">
+              <?php if (have_rows('child_siblings')) : ?>
                 <div class="swiper-container">
                   <div class="swiper-wrapper">
                     <?php while (have_rows('child_siblings')) : the_row(); ?>
@@ -135,18 +135,18 @@
                   <div class="swiper-button-prev hidden-xs"></div>
                   <div class="swiper-pagination"></div>
                 </div>
-              </article>
-            <?php else : ?>
-              <div class="slide-image" placeholder>
-                <p class="no-info">No info available…</p>
-              </div>
-            <?php endif; ?>
+              <?php else : ?>
+                <div class="slide-image" placeholder>
+                  <p class="no-info">No info available…</p>
+                </div>
+              <?php endif; ?>
+            </article>
           </div>
           <div class="col-xs-12 col-sm-3 aligncenter">
             <!-- CHILDREN -->
             <h3>Children</h3>
-            <?php if (have_rows('child_children')) : ?>
-              <article class="slides">
+            <article class="slides">
+              <?php if (have_rows('child_children')) : ?>
                 <div class="swiper-container">
                   <div class="swiper-wrapper">
                     <?php while (have_rows('child_children')) : the_row(); ?>
@@ -167,18 +167,18 @@
                   <div class="swiper-button-prev hidden-xs"></div>
                   <div class="swiper-pagination"></div>
                 </div>
-              </article>
-            <?php else : ?>
-              <div class="slide-image" placeholder>
-                <p class="no-info">No info available…</p>
-              </div>
-            <?php endif; ?>
+              <?php else : ?>
+                <div class="slide-image" placeholder>
+                  <p class="no-info">No info available…</p>
+                </div>
+              <?php endif; ?>
+            </article>
           </div>
           <div class="col-xs-12 col-sm-3 aligncenter">
             <!-- RELATIVES -->
             <h3>Relatives</h3>
-            <?php if(have_rows('child_relatives')) : ?>
-              <article class="slides">
+            <article class="slides">
+              <?php if(have_rows('child_relatives')) : ?>
                 <div class="swiper-container">
                   <div class="swiper-wrapper">
                     <?php while(have_rows('child_relatives')) : the_row(); ?>
@@ -199,12 +199,12 @@
                   <div class="swiper-button-prev hidden-xs"></div>
                   <div class="swiper-pagination"></div>
                 </div>
-              </article>
-            <?php else : ?>
-              <div class="slide-image" placeholder>
-                <p class="no-info">No info available…</p>
-              </div>
-            <?php endif; ?>
+              <?php else : ?>
+                <div class="slide-image" placeholder>
+                  <p class="no-info">No info available…</p>
+                </div>
+              <?php endif; ?>
+            </article>
           </div>
         </div>
       </div>
