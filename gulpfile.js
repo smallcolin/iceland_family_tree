@@ -6,9 +6,15 @@ var gulp = require('gulp'),
     .pipe(livereload());
   });
 
+  gulp.task('php', function() {
+    gulp.src('**/*.php')
+    .pipe(livereload());
+  });
+
   gulp.task('watch', function() {
     livereload.listen(['start']);
     gulp.watch('assets/scss/**/*.scss', ['sass']);
+    gulp.watch('**/*.php', ['php']);
   });
 
-  gulp.task('default', ['sass', 'watch']);
+  gulp.task('default', ['sass', 'php', 'watch']);
