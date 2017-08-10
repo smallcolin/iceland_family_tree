@@ -15,7 +15,7 @@
             ?>
               <?php if ( ! empty($terms) || ! is_wp_error($terms) ) {
                 echo '<ul class="country-list">';
-                //allCountries();
+                // allCountries();
                 // echo '<a href="';
                 //echo all terms link here
                 // echo '"><li>' . 'All' . '</li></a>';
@@ -35,56 +35,54 @@
         </div>
       </div>
       <div class="row">
-        <?php
-          if (have_posts()) :
-            while (have_posts()) : the_post();
-            $image = get_field( 'image' );
-          ?>
-            <div class="col-xs-6 col-sm-4 col-md-3 aligncenter">
-              <h3>
-                <a href="<?php the_permalink(); ?>">
-                  <?php if ( $image ) { ?>
-                    <div class="thumbs" style="background-image: url('<?php echo $image; ?>');">
-                      <!-- Mobile Screen -->
-                      <div class="mobile-title visible-xs">
-                        <?php the_title() ?>
-                      </div>
-                      <!-- Full screen title -->
-                      <div class="filter hidden-xs hidden-sm hidden-md">
-                        <h2 class="hidden-title">
-                          <?php the_title(); ?>
-                        </h2>
-                      </div>
+        <?php if (have_posts()) :
+          while (have_posts()) : the_post();
+          $image = get_field( 'image' ); ?>
+
+          <div class="col-xs-6 col-sm-4 col-md-3 aligncenter">
+            <h3>
+              <a href="<?php the_permalink(); ?>">
+                <?php if ( $image ) { ?>
+                  <div class="thumbs" style="background-image: url('<?php echo $image; ?>');">
+                    <!-- Mobile Screen -->
+                    <div class="mobile-title visible-xs">
+                      <?php the_title() ?>
                     </div>
-                  <?php } else { ?>
-                    <div class="thumbs">
-                      <!-- Mobile Screen -->
-                      <div class="mobile-title visible-xs">
-                        <?php the_title() ?>
-                      </div>
-                      <!-- Full screen title -->
-                      <div class="filter hidden-xs hidden-sm hidden-md">
-                        <h2 class="no-image-title">
-                          <?php the_title(); ?>
-                        </h2>
-                      </div>
+                    <!-- Full screen title -->
+                    <div class="filter hidden-xs hidden-sm hidden-md">
+                      <h2 class="hidden-title">
+                        <?php the_title(); ?>
+                      </h2>
                     </div>
-                  <?php } ?>
-                </a>
-              </h3>
-            </div>
-          <?php endwhile; ?>
-        </div>
-        <div class="row">
-          <div class="col-xs-12 text-center">
-              <?php paginator(); ?> <!-- pagination -->
+                  </div>
+                <?php } else { ?>
+                  <div class="thumbs">
+                    <!-- Mobile Screen -->
+                    <div class="mobile-title visible-xs">
+                      <?php the_title() ?>
+                    </div>
+                    <!-- Full screen title -->
+                    <div class="filter hidden-xs hidden-sm hidden-md">
+                      <h2 class="no-image-title">
+                        <?php the_title(); ?>
+                      </h2>
+                    </div>
+                  </div>
+                <?php } ?>
+              </a>
+            </h3>
           </div>
-        </div>
-            <?php else : ?>
-              <div class="no-entries">No entries were found for this country!</div>
-          <?php endif;
+          <?php endwhile;
         ?>
       </div>
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <?php paginator(); ?> <!-- pagination -->
+        </div>
+      </div>
+        <?php else : ?>
+          <div class="no-entries">No entries were found for this country!</div>
+        <?php endif; ?>
     </div>
   </section>
 <?php get_footer(); ?>
