@@ -95,8 +95,8 @@
                     </div>
                   <?php endwhile; ?>
                 </div>
-                <div class="swiper-button-next hidden-xs"></div>
-                <div class="swiper-button-prev hidden-xs"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
                 <div class="swiper-pagination"></div>
               </div>
             <?php else : ?>
@@ -127,8 +127,8 @@
                     </div>
                   <?php endwhile; ?>
                 </div>
-                <div class="swiper-button-next hidden-xs"></div>
-                <div class="swiper-button-prev hidden-xs"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
                 <div class="swiper-pagination"></div>
               </div>
             <?php else : ?>
@@ -159,8 +159,8 @@
                     </div>
                   <?php endwhile; ?>
                 </div>
-                <div class="swiper-button-next hidden-xs"></div>
-                <div class="swiper-button-prev hidden-xs"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
                 <div class="swiper-pagination"></div>
               </div>
             <?php else : ?>

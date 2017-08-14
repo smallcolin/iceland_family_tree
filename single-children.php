@@ -99,8 +99,8 @@
                       </div>
                     <?php endwhile; ?>
                   </div>
-                  <div class="swiper-button-next hidden-xs"></div>
-                  <div class="swiper-button-prev hidden-xs"></div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
                   <div class="swiper-pagination"></div>
                 </div>
               <?php else : ?>
@@ -131,8 +131,8 @@
                       </div>
                     <?php endwhile; ?>
                   </div>
-                  <div class="swiper-button-next hidden-xs"></div>
-                  <div class="swiper-button-prev hidden-xs"></div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
                   <div class="swiper-pagination"></div>
                 </div>
               <?php else : ?>
@@ -154,8 +154,12 @@
                         <?php
                           $child = get_sub_field('child_child');
                           $childImage = get_field('image', $child->ID);
-                        if ( $child ) { ?>
-                          <img class="slide-image" src="<?php echo $childImage; ?>" />
+                        if ( $child ) {
+                          if ( $childImage ) { ?>
+                            <img class="slide-image" src="<?php echo $childImage; ?>" />
+                          <?php } else { ?>
+                            <img class="slide-image" />
+                          <?php } ?>
                           <a class="slide-link" href="<?php the_permalink($child); ?>">
                             <?php echo get_the_title($child); ?>
                           </a>
@@ -163,8 +167,8 @@
                       </div>
                     <?php endwhile; ?>
                   </div>
-                  <div class="swiper-button-next hidden-xs"></div>
-                  <div class="swiper-button-prev hidden-xs"></div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
                   <div class="swiper-pagination"></div>
                 </div>
               <?php else : ?>
@@ -195,8 +199,8 @@
                       </div>
                     <?php endwhile; ?>
                   </div>
-                  <div class="swiper-button-next hidden-xs"></div>
-                  <div class="swiper-button-prev hidden-xs"></div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
                   <div class="swiper-pagination"></div>
                 </div>
               <?php else : ?>
