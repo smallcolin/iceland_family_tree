@@ -19,6 +19,8 @@
           <?php
             if ($image) { ?>
               <div class="thumbs person-image" style="background-image: url('<?php echo $image; ?>');"></div>
+            <?php } else { ?>
+              <div class="thumbs person-image"></div>
             <?php }
           ?>
         </div>
@@ -90,12 +92,19 @@
                       <?php
                         $child = get_sub_field('partner_child');
                         $childImage = get_field('image', $child->ID);
-                      if ( $child ) { ?>
-                        <img class="slide-image" src="<?php echo $childImage; ?>" />
-                        <a class="slide-link" href="<?php the_permalink($child); ?>">
-                          <?php echo get_the_title($child); ?>
-                        </a>
-                      <?php } ?>
+                      if ( $child ) {
+                        if ( $childImage ) { ?>
+                            <img class="slide-image" src="<?php echo $childImage; ?>" />
+                            <a class="slide-link" href="<?php the_permalink($child); ?>">
+                              <?php echo get_the_title($child); ?>
+                            </a>
+                          <?php } else { ?>
+                            <img class="slide-image" />
+                            <a class="no-slide-image" href="<?php the_permalink($child); ?>">
+                              <?php echo get_the_title($child); ?>
+                            </a>
+                          <?php }
+                        } ?>
                     </div>
                   <?php endwhile; ?>
                 </div>
@@ -122,12 +131,19 @@
                       <?php
                         $grandchild = get_sub_field('partner_grandchild');
                         $grandchildImage = get_field('image', $grandchild->ID);
-                      if ( $grandchild ) { ?>
-                        <img class="slide-image" src="<?php echo $grandchildImage; ?>" />
-                        <a class="slide-link" href="<?php the_permalink($grandchild); ?>">
-                          <?php echo get_the_title($grandchild); ?>
-                        </a>
-                      <?php } ?>
+                      if ( $grandchild ) {
+                        if ( $grandchildImage ) { ?>
+                            <img class="slide-image" src="<?php echo $grandchildImage; ?>" />
+                            <a class="slide-link" href="<?php the_permalink($grandchild); ?>">
+                              <?php echo get_the_title($grandchild); ?>
+                            </a>
+                          <?php } else { ?>
+                            <img class="slide-image" />
+                            <a class="no-slide-image" href="<?php the_permalink($grandchild); ?>">
+                              <?php echo get_the_title($grandchild); ?>
+                            </a>
+                          <?php }
+                        } ?>
                     </div>
                   <?php endwhile; ?>
                 </div>

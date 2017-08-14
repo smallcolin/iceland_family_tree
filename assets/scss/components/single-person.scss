@@ -81,6 +81,9 @@ article.slides {
         &:hover {
           color: $black;
         }
+        &.no-slide-image {
+          color: $black;
+        }
       }
     }
   }
