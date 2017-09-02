@@ -8,7 +8,7 @@
 	transition: 1s ease-out;
 
 	h2 {
-		font-size: 24px;
+		font-size: 20px;
 		margin: 0;
 		padding-left: 0;
 		line-height: 50px;
@@ -32,6 +32,7 @@
 				border-bottom: 2px solid $black;
 			}
 			a {
+				font-size: 17px;
 				&:hover {
 					text-decoration: none;
 					color: $gold;
@@ -145,6 +146,7 @@
 @media ( min-width: 992px ) {
 	#header {
 		h2 {
+			font-size: 24px;
 			line-height: 50px;
 		}
 		.search-icon {

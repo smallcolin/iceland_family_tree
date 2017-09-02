@@ -14,7 +14,7 @@
 	<header id="header">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-xs-8 col-sm-8 col-md-3">
+				<div class="col-xs-8 col-sm-8 col-md-4">
 					<a href="<?php bloginfo("url"); ?>">
 						<h2><?php bloginfo('site_name'); ?></h2>
 					</a>
@@ -23,7 +23,7 @@
 				<div class="visible-xs visible-sm col-xs-2 aligncenter search-icon">
 					<i class="fa fa-search"></i>
 				</div>
-				<div class="hidden-xs hidden-sm col-md-8 fullmenu">
+				<div class="hidden-xs hidden-sm col-md-7 fullmenu">
 					<?php wp_nav_menu(); ?>
 				</div>
 				<!-- Search icon on full screen -->
