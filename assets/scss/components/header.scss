@@ -23,6 +23,7 @@
 		list-style: none;
 		padding-left: 0;
 		padding-right: 30px;
+
 		li {
 			display: inline-block;
 			line-height: 50px;
@@ -36,6 +37,25 @@
 				&:hover {
 					text-decoration: none;
 					color: $gold;
+				}
+			}
+			// Shows sub menu
+			&:nth-of-type(2) {
+				&:hover .sub-menu {
+					display: block;
+				}
+			}
+
+			.sub-menu {
+				position: absolute;
+				display: none;
+				background-color: $gold;
+				border-top: 2px solid $black;
+				margin: 0;
+				padding: 0 20px;
+				z-index: 99;
+				li {
+					display: block;
 				}
 			}
 		}
@@ -76,6 +96,13 @@
 				}
 				&:last-of-type {
 					border-bottom: none;
+				}
+				.sub-menu {
+					display: none;
+					width: 100%;
+					li {
+						// display: inline-block;
+					}
 				}
 			}
 		}

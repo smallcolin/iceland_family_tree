@@ -1,5 +1,17 @@
 !function($){
 
+// Family Menu
+
+	// Screen sub menu
+	// $(".fullmenu li:nth-of-type(2)").hover(function(){
+	// 	$(this).children(".sub-menu").slideToggle();
+	// });
+	//
+	// Responsive sub menu
+	// $(".responsive-menu li:nth-of-type(2)").click(function(){
+	// 	$(".sub-menu").slideToggle();
+	// });
+
 // Responsive Menu
 
 	$(".menu-icon").click(function() {
