@@ -1,0 +1,33 @@
+section.originals {
+  display: block;
+  background-color: $white;
+  color: $black;
+  margin: 40px 0 30px;
+
+  .parents {
+    display: block;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 250px;
+    margin: 0 auto;
+    border: 1px solid $black;
+  }
+
+  h3 {
+    @include aligncenter;
+  }
+}
+
+
+//  MEDIA QUERIES
+
+
+
+@media ( min-width: 992px ) {
+  section.originals {
+    margin: 70px 0 30px;
+
+  }
+}
