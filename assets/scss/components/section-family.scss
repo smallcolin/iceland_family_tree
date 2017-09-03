@@ -1,0 +1,39 @@
+section.family {
+  display: block;
+  background-color: $white;
+  color: $black;
+  margin: 40px 0 30px;
+  padding: 20px 0;
+  min-height: 500px;
+
+  .cpt-menu {
+    list-style: none;
+    @include aligncenter;
+    margin: 0 auto;
+    padding: 0;
+    li {
+      font-size: 18px;
+      margin-bottom: 30px;
+      i {
+        padding-left: 8px;
+      }
+    }
+  }
+}
+
+
+//  MEDIA QUERIES
+
+@media ( min-width: 992px ) {
+  section.family {
+    margin: 70px 0 30px;
+    padding: 50px 0;
+
+    .cpt-menu {
+      li {
+        font-size: 24px;
+      }
+    }
+
+  }
+}
