@@ -72,4 +72,34 @@
     );
   };
   add_action('init', 'create_taxonomy');
+
+
+  // CREATE A MENU TO SHOW ALL CPT TYPES
+
+  function show_cpt_menu() {
+    // Define the arguements
+    $args = array(
+      'public' => true,
+      '_builtin' => false
+    );
+
+    $post_types = get_post_types($args, 'names');
+
+      // Output the titles in a list
+      echo '<ul class="cpt-menu">'; ?>
+
+        <?php foreach ($post_types as $post_type) : ?>
+          <div class="col-xs-12 col-sm-3">
+            <li>
+              <a href="<?php echo get_post_type_archive_link($post_type); ?>">
+                <?php echo $post_type; ?>
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </li>
+          </div>
+        <?php endforeach; ?>
+
+      <?php echo '</ul>';
+  }
+
 ?>
