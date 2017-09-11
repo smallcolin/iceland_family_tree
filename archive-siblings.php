@@ -12,13 +12,12 @@
           $posts = get_posts(array(
             'post_type' => 'siblings',
             'posts_per_page' => -1,
-            'orderby' => 'name',
+            'meta_key' => 'date_of_birth',
+            'orderby' => 'meta_value',
             'order' => 'ASC'
           ));
-          // if (have_posts('siblings')) :
-          //   while (have_posts('siblings')) : the_post();
+
           if ( $posts ) :
-            // $sibling = get_sub_field('sibling');
             foreach ($posts as $post) {
               $image = get_field( 'image' );
               setup_postdata($post) ?>
@@ -56,8 +55,6 @@
                 </h3>
               </div>
             <?php }
-          ?>
-            <?php //endwhile;
             wp_reset_postdata();
           endif;
         ?>

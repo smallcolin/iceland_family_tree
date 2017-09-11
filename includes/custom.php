@@ -33,7 +33,14 @@ function cpt_taxonomy() {
       $addy_2 = get_field('address_2');
       $postcode = get_field('postcode');
       $job = get_field('job');
-      $partner = get_field('child_partner');
+      // $partner variable
+      if (get_field('partner')) {
+        $partner = get_field('partner');
+      } elseif (get_field('child_partner')) {
+        $partner = get_field('child_partner');
+      } elseif (get_field('partner_partner')) {
+        $partner = get_field('partner_partner');
+      }
       $partImage = get_field('image', $partner->ID);
     ?>
     <div class="col-xs-12 col-sm-6"> <!--Person Details-->
@@ -103,6 +110,67 @@ function cpt_taxonomy() {
     </div>
   <?php }
 
+// Function to call all cpt with the same taxonomy
+
+function allCountries() {
+  $args = array(
+    'post_type' => array('siblings', 'children', 'grandchildren', 'partners'),
+    'posts_per_page' => -1,
+    'orderby' => 'name',
+    'order' => 'ASC',
+    // 'tax_query' => array(
+    //   'taxonomy' => 'country',
+    //   'field' => 'slug',
+    //   'terms' => array('sweden'),
+    //   'include_children' => true,
+    //   'operator' => 'IN'
+    // )
+    // 'taxonomy' => 'country'
+  );
+
+  $query = new WP_Query($args); ?>
+
+  <section class="archives">
+    <div class="container">
+      <div class="row">
+        <?php while ($query -> have_posts()) : $query -> the_post();
+          $image = get_field('image'); ?>
+          <div class="col-xs-6 col-sm-4 col-md-3">
+            <a href="<?php the_permalink(); ?>">
+              <?php if ($image) { ?>
+                <div class="thumbs" style="background-image: url('<?php echo $image; ?>');">
+                  <!-- Mobile Screen -->
+                  <div class="mobile-title visible-xs">
+                    <?php the_title() ?>
+                  </div>
+                  <!-- Full screen title -->
+                  <div class="filter hidden-xs hidden-sm hidden-md">
+                    <h2 class="hidden-title">
+                      <?php the_title(); ?>
+                    </h2>
+                  </div>
+                </div>
+              <?php } else { ?>
+                <div class="thumbs">
+                  <!-- Mobile Screen -->
+                  <div class="mobile-title visible-xs">
+                    <?php the_title() ?>
+                  </div>
+                  <!-- Full screen title -->
+                  <div class="filter hidden-xs hidden-sm hidden-md">
+                    <h2 class="no-image-title">
+                      <?php the_title(); ?>
+                    </h2>
+                  </div>
+                </div>
+              <?php }?>
+            </a>
+          </div>
+        <?php endwhile; wp_reset_query(); ?>
+      </div>
+    </div>
+  </section>
+<?php }
 
 // Pagination stuff
 
@@ -141,3 +209,37 @@ function cpt_taxonomy() {
       </nav>
     <?php }
   }
+
+  // Function for Gallery layout
+  //
+  function show_gallery() {
+
+    // Declare variable for images
+    $images = get_field('gallery');
+
+    if ($images) { ?>
+      <div id="slider" class="flexslider">
+        <ul class="slides">
+          <?php
+            foreach ($images as $image) { ?>
+              <li>
+                <img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt'] ?>">
+                <p>
+                  <?php echo $image['caption']; ?>
+                </p>
+              </li>
+            <?php }
+          ?>
+        </ul>
+      </div>
+      <div id="carousel" class="flexslider">
+        <ul class="slides">
+          <?php foreach( $images as $image ) : ?>
+            <li>
+              <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
+            </li>
+          <?php endforeach; ?>
+        </ul>
+    </div>
+    <?php }
+  } ?>

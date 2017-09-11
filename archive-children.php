@@ -12,13 +12,11 @@
           $posts = get_posts(array(
             'post_type' => 'children',
             'posts_per_page' => -1,
-            'orderby' => 'name',
+            'meta_key' => 'date_of_birth',
+            'orderby' => 'meta_value',
             'order' => 'ASC'
           ));
-          // if (have_posts('children')) :
-          //   while (have_posts('children')) : the_post();
           if ( $posts ) :
-            // $child = get_sub_field('child');
             foreach ($posts as $post) {
               $image = get_field( 'image' );
               setup_postdata($post) ?>
@@ -56,8 +54,6 @@
                   </h3>
                 </div>
             <?php }
-          ?>
-            <?php //endwhile;
             wp_reset_postdata();
           endif;
         ?>
