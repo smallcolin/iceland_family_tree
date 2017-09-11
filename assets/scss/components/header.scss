@@ -39,7 +39,7 @@
 					color: $gold;
 				}
 			}
-			
+
 			.sub-menu {
 				position: absolute;
 				display: none;
@@ -74,7 +74,8 @@
 
 	.responsive-menu {
 		display: none;
-		z-index: 15;
+		z-index: 100;
+		position: relative;
 		#menu-header-menu-1.menu {
 			background-color: $brown;
 		 	@include aligncenter;
@@ -95,7 +96,7 @@
 					display: none;
 					width: 100%;
 					li {
-						// display: inline-block;
+						display: block;
 					}
 				}
 			}
