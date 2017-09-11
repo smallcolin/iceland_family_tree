@@ -2,15 +2,13 @@
 
 // Family Menu
 
-	// Screen sub menu
-	// $(".fullmenu li:nth-of-type(2)").hover(function(){
-	// 	$(this).children(".sub-menu").slideToggle();
-	// });
-	//
-	// Responsive sub menu
-	// $(".responsive-menu li:nth-of-type(2)").click(function(){
-	// 	$(".sub-menu").slideToggle();
-	// });
+	var family = '.fullmenu li:nth-of-type(2)';
+
+	$(family).hoverIntent(function() {
+		$(this).children(".sub-menu").slideToggle();
+	});
+
+
 
 // Responsive Menu
 
@@ -69,10 +67,33 @@
 		grabCursor: true,
 		loop: true,
 		spaceBetween: 30
-		// effect: 'fade'
 	});
 
-	// Retain image opacity on image/link hover
+// Flexslider (Gallery)
+
+	$('#carousel').flexslider({
+		animation: "slide",
+		controlNav: false,
+		animationLoop: false,
+		slideshow: false,
+		itemWidth: 150,
+		itemMargin: 0,
+		asNavFor: '#slider'
+	});
+
+	$('#slider').flexslider({
+		animation: "fade",
+		controlNav: false,
+		animationLoop: true,
+		slideshow: true,
+		slideshowSpeed: 3000,
+		pauseOnAction: true,
+		pauseOnHover: true,
+		sync: "#carousel"
+	});
+
+
+// Retain image opacity on image/link hover
 
 	$(".slide-link").hover(function() {
 		$(this).siblings(".slide-image").css('opacity', '0.6');

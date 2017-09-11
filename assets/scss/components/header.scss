@@ -39,13 +39,7 @@
 					color: $gold;
 				}
 			}
-			// Shows sub menu
-			&:nth-of-type(2) {
-				&:hover .sub-menu {
-					display: block;
-				}
-			}
-
+			
 			.sub-menu {
 				position: absolute;
 				display: none;
