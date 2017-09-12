@@ -8,13 +8,14 @@
 		$(this).children(".sub-menu").slideToggle();
 	});
 
-
-
 // Responsive Menu
 
 	$(".menu-icon").click(function() {
 		$(".responsive-menu").fadeToggle();
 		$(this).children().toggleClass("fa-bars fa-times");
+		$(".fa-search").toggle();
+		$("#header").toggleClass("brown");
+		$("#header a, #header i").toggleClass("white-text");
 	});
 
 // Scroll to top button
@@ -91,7 +92,6 @@
 		pauseOnHover: true,
 		sync: "#carousel"
 	});
-
 
 // Retain image opacity on image/link hover
 
