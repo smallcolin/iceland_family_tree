@@ -8,13 +8,14 @@
 	transition: 1s ease-out;
 
 	h2 {
-		font-size: 20px;
+		font-size: 18px;
 		margin: 0;
 		padding-left: 0;
 		line-height: 50px;
 		transition: 1s ease-out;
 	}
 	a {
+		text-transform: uppercase;
 		color: $black;
 		transition: 1s ease-out;
 	}
@@ -53,6 +54,12 @@
 				}
 			}
 		}
+	}
+
+	.fa-facebook {
+		line-height: 50px;
+		float: right;
+		font-size: 22px;
 	}
 
 	.search-icon {
@@ -102,6 +109,7 @@
 			}
 		}
 	}
+
 }
 
 .brown {

@@ -24,6 +24,9 @@
 					<i class="fa fa-search"></i>
 				</div>
 				<div class="hidden-xs hidden-sm col-md-7 fullmenu">
+					<a href="<?php echo get_field('facebook', 'options'); ?>" target="_blank">
+						<i class="fa fa-facebookç"></i>
+					</a>
 					<?php wp_nav_menu(); ?>
 				</div>
 				<!-- Search icon on full screen -->
