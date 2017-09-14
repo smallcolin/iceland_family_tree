@@ -77,7 +77,7 @@
   // CREATE A MENU TO SHOW ALL CPT TYPES
 
   function show_cpt_menu() {
-    // Define the arguements
+    // Define the arguments
     $args = array(
       'public' => true,
       '_builtin' => false
