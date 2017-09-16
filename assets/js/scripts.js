@@ -81,28 +81,32 @@
 		touch: true
 	});
 
-// Flexslider (Gallery)
+// Gallery modal
 
-	$('#carousel').flexslider({
-		animation: "slide",
-		controlNav: false,
-		animationLoop: false,
-		slideshow: false,
-		itemWidth: 150,
-		itemMargin: 0,
-		asNavFor: '#slider',
-		touch: true
+	var picture = '.gallery-list li img';
+
+	// Enlarge image
+	$(picture).click(function() {
+		var src = $(this).data("url");
+
+		$("#modal img").attr("src", src);
+		$("#fade").show();
+		$("#modal").show();
+		$("#modal img").show();
 	});
 
-	$('#slider').flexslider({
-		animation: "fade",
-		controlNav: false,
-		animationLoop: true,
-		slideshow: true,
-		slideshowSpeed: 3000,
-		pauseOnAction: true,
-		pauseOnHover: true,
-		sync: "#carousel"
+	// Click on Fade
+	$("#fade").click(function() {
+		$(this).hide();
+		$("#modal").hide();
+		$("#modal img").hide();
+	});
+
+	// Click on Modal
+	$("#modal").click(function() {
+		$(this).hide();
+		$("#fade").hide();
+		$("#modal img").hide();
 	});
 
 // Retain image opacity on image/link hover

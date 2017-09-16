@@ -211,35 +211,24 @@ function allCountries() {
   }
 
   // Function for Gallery layout
-  //
-  function show_gallery() {
 
-    // Declare variable for images
+  function one_more_gallery() {
     $images = get_field('gallery');
 
     if ($images) { ?>
-      <div id="slider" class="flexslider">
-        <ul class="slides">
-          <?php
-            foreach ($images as $image) { ?>
-              <li>
-                <img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt'] ?>">
-                <p>
-                  <?php echo $image['caption']; ?>
-                </p>
-              </li>
-            <?php }
-          ?>
+      <div class="gallery-container">
+        <ul class="gallery-list">
+        <?php
+          foreach ($images as $image) {
+            $thumb = $image['sizes']['thumbnail'];
+            $alt = $image['alt'];
+            $fullsize = $image['url']; ?>
+            <li>
+              <img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" data-url="<?php echo $fullsize; ?>"/>
+            </li>
+          <?php }
+        ?>
         </ul>
       </div>
-      <div id="carousel" class="flexslider">
-        <ul class="slides">
-          <?php foreach( $images as $image ) : ?>
-            <li>
-              <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
-            </li>
-          <?php endforeach; ?>
-        </ul>
-    </div>
     <?php }
-  } ?>
+  }
