@@ -92,7 +92,7 @@
           <div class="col-xs-12 col-sm-3">
             <li>
               <a href="<?php echo get_post_type_archive_link($post_type); ?>">
-                <?php echo $post_type; ?>
+                <?php echo ucfirst($post_type); ?>
                 <i class="fa fa-arrow-down" aria-hidden="true"></i>
               </a>
               <ul class="name-list">
