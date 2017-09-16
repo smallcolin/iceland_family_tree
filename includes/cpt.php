@@ -93,13 +93,30 @@
             <li>
               <a href="<?php echo get_post_type_archive_link($post_type); ?>">
                 <?php echo $post_type; ?>
-                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                <i class="fa fa-arrow-down" aria-hidden="true"></i>
               </a>
+              <ul class="name-list">
+                <?php
+                  // Get the family members for each generation
+                  $posts = get_posts(array(
+                    'post_type' => $post_type,
+                    'post_status' => 'publish',
+                    'numberposts' => -1,
+                    'meta_key' => 'date_of_birth',
+                    'orderby' => 'meta_value',
+                    'order' => 'ASC'
+                  ));
+                  foreach ($posts as $postlist) { ?>
+                    <li>
+                      <a href="<?php the_permalink($postlist->ID); ?>">
+                        <?php echo $postlist->post_title; ?>
+                      </a>
+                    </li>
+                <?php } ?>
+              </ul>
             </li>
           </div>
-        <?php endforeach; ?>
+        <?php endforeach;
+      echo '</ul>'; ?>
 
-      <?php echo '</ul>';
-  }
-
-?>
+  <?php }

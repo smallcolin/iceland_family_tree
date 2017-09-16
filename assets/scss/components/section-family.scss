@@ -14,8 +14,23 @@ section.family {
     li {
       font-size: 18px;
       margin-bottom: 30px;
+      a {
+        &:hover {
+          text-decoration: none;
+        }
+      }
       i {
         padding-left: 8px;
+        margin-bottom: 30px;
+      }
+      .name-list {
+        display: none;
+        list-style: none;
+        padding: 0;
+        li {
+          font-size: 16px;
+          margin-bottom: 10px;
+        }
       }
     }
   }
@@ -32,6 +47,11 @@ section.family {
     .cpt-menu {
       li {
         font-size: 20px;
+        .name-list {
+          li {
+            font-size: 18px;
+          }
+        }
       }
     }
 

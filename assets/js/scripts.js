@@ -1,11 +1,21 @@
 !function($){
 
-// Family Menu
+// Family in Main Menu
 
 	var family = '.fullmenu li:nth-of-type(2)';
 
 	$(family).hoverIntent(function() {
 		$(this).children(".sub-menu").slideToggle();
+	});
+
+// All drop-down menus on Family page
+
+	var familyListItem = '.cpt-menu li';
+	var familyMenu = '.name-list';
+
+	$(familyListItem).hoverIntent(function() {
+		$(this).children(familyMenu).slideToggle();
+		// Menu doesn't stay open
 	});
 
 // Responsive Menu
@@ -67,7 +77,8 @@
 		prevButton: '.swiper-button-prev',
 		grabCursor: true,
 		loop: true,
-		spaceBetween: 30
+		spaceBetween: 30,
+		touch: true
 	});
 
 // Flexslider (Gallery)
@@ -79,7 +90,8 @@
 		slideshow: false,
 		itemWidth: 150,
 		itemMargin: 0,
-		asNavFor: '#slider'
+		asNavFor: '#slider',
+		touch: true
 	});
 
 	$('#slider').flexslider({
@@ -101,7 +113,7 @@
 		$(this).siblings(".slide-image").css('opacity', '1');
 	});
 
-	// Search form
+// Search form
 
 	$(".fa-search").click(function() {
 		$(".search-icon").children().toggleClass("fa-search fa-ellipsis-h");
