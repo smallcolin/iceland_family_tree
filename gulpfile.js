@@ -11,10 +11,16 @@ var gulp = require('gulp'),
     .pipe(livereload());
   });
 
+  gulp.task('js', function() {
+    gulp.src('assets/js/*.js')
+    .pipe(livereload());
+  });
+
   gulp.task('watch', function() {
     livereload.listen(['start']);
     gulp.watch('assets/scss/**/*.scss', ['sass']);
+    gulp.watch('assets/js/*.js', ['js']);
     gulp.watch('**/*.php', ['php']);
   });
 
-  gulp.task('default', ['sass', 'php', 'watch']);
+  gulp.task('default', ['sass', 'php', 'js', 'watch']);
