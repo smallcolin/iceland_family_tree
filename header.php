@@ -11,6 +11,9 @@
 
 <body <?php body_class(); ?>>
 
+	<div id="fade"></div>
+	<div id="modal"><img /></div>
+
 	<header id="header">
 		<div class="container-fluid">
 			<div class="row">
@@ -23,9 +26,10 @@
 				<div class="visible-xs visible-sm col-xs-2 aligncenter search-icon">
 					<i class="fa fa-search"></i>
 				</div>
+				<!-- Facebook icon and menu full screen -->
 				<div class="hidden-xs hidden-sm col-md-7 fullmenu">
 					<a href="<?php echo get_field('facebook', 'options'); ?>" target="_blank">
-						<i class="fa fa-facebookç"></i>
+						<i class="fa fa-facebook"></i>
 					</a>
 					<?php wp_nav_menu(); ?>
 				</div>
