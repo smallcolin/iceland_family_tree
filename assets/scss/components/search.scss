@@ -70,6 +70,12 @@ section.results {
 
 	section.results {
 		min-height: 500px;
+		.search-results-box {
+			height: 230px;
+			h3 {
+				padding: 10px 0;
+			}
+		}
 	}
 
 	.searchform,
