@@ -85,44 +85,38 @@
 
     $post_types = get_post_types($args, 'names');
 
-    // Output all lists
-    echo '<div class="cpt-menu-blocks">';
-      foreach ($post_types as $post_type) { ?>
-        <div class="col-xs-12 col-sm-6">
-          <div class="family-box">
-            <h3>
+      // Output the titles in a list
+      echo '<ul class="cpt-menu">'; ?>
+
+        <?php foreach ($post_types as $post_type) : ?>
+          <div class="col-xs-12 col-sm-3">
+            <li>
               <a href="<?php echo get_post_type_archive_link($post_type); ?>">
-              <?php echo ucfirst($post_type); ?>
+                <?php echo ucfirst($post_type); ?>
+                <i class="fa fa-arrow-down" aria-hidden="true"></i>
               </a>
-            </h3>
-            <p>
-              <?php
-              // Get the family members for each generation
-              $posts = get_posts(array(
-                'post_type' => $post_type,
-                'post_status' => 'publish',
-                'numberposts' => -1,
-                'meta_key' => 'date_of_birth',
-                'orderby' => 'meta_value',
-                'order' => 'ASC'
-              ));
-              // Extra variables
-              $count = count($posts);
-              $i = 1;
-              foreach ($posts as $postlist) { ?>
-                <a href="<?php the_permalink($postlist->ID); ?>">
-                  <?php
-                    echo $postlist->post_title;
-                    if ($i < $count) {
-                      echo ', ';
-                      $i++;
-                    }
-                  ?>
-                </a>
-              <?php } ?>
-            </p>
+              <ul class="name-list">
+                <?php
+                  // Get the family members for each generation
+                  $posts = get_posts(array(
+                    'post_type' => $post_type,
+                    'post_status' => 'publish',
+                    'numberposts' => -1,
+                    'meta_key' => 'date_of_birth',
+                    'orderby' => 'meta_value',
+                    'order' => 'ASC'
+                  ));
+                  foreach ($posts as $postlist) { ?>
+                    <li>
+                      <a href="<?php the_permalink($postlist->ID); ?>">
+                        <?php echo $postlist->post_title; ?>
+                      </a>
+                    </li>
+                <?php } ?>
+              </ul>
+            </li>
           </div>
-        </div>
-      <?php }
-    echo '</div>';
-}
+        <?php endforeach;
+      echo '</ul>'; ?>
+
+  <?php }
