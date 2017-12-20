@@ -99,11 +99,13 @@ function cpt_taxonomy() {
               </td>
           </tr>
           <tr>
+            <?php if ($partImage) { ?>
             <td></td>
             <td class="right">
               <img class="partner-image" src="<?php echo $partImage; ?>" alt="partner">
             </td>
-            <?php } ?>
+            <?php }
+            } ?>
           </tr>
         </tbody>
       </table>
