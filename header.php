@@ -64,3 +64,5 @@
 	</div>
 
 	<main id="main">
+		<!-- Run Birthday query -->
+		<?php birthday(); ?>

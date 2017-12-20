@@ -232,3 +232,57 @@ function allCountries() {
       </div>
     <?php }
   }
+
+  // Birthday
+
+  function birthday() {
+    // Check all posts for Birthday
+    $every_post = get_posts(array(
+      'post_type' => array('siblings', 'children', 'grandchildren', 'partners'),
+      'posts_per_page' => -1,
+      'posts_status' => 'publish'
+    ));
+
+    foreach ($every_post as $single_post) {
+      $date = date('d/m/Y');
+      $birthday = get_post_meta($single_post->ID, 'date_of_birth', true);
+
+      if($birthday != '') {
+        $bday = date("d/m/Y", strtotime($birthday));
+      }
+      // Get useable values
+      $sub_date = substr($date, 0, 5);
+      $bday = substr($bday, 0, 5);
+      $age = age($birthday);
+
+      if ($bday == $sub_date) {
+        // Content for each post
+        $postTitle = 'Til Hamingju ' . $single_post->post_title . ', ' . $date;
+        $content = '<p>Í dag ertu ' . $age . ' ára gamall</p><p>Eigðu frábæran dag.</p>';
+
+        $post_data = array(
+          'post_title' => $postTitle,
+          'post_status' => 'publish',
+          'post_content' => $content,
+        );
+        // Does a post already exist?
+        $page_exists = get_page_by_title( $postTitle, OBJECT, 'post');
+
+        // If not, create a new post
+        if ($page_exists == null) {
+          wp_insert_post($post_data);
+        }
+      }
+    }
+  }
+
+  function age($birthday) {
+    $dash = '-';
+    $birthDate = substr_replace($birthday, $dash, 4, 0);
+    $birthDate = substr_replace($birthDate, $dash, 7, 0);
+    $birthDate = date("d-m-Y", strtotime($birthDate));
+    $date = date('Y-m-d');
+    $diff = date_diff(date_create($birthDate), date_create($today));
+    $result = $diff->format('%y');
+    return $result;
+  }
