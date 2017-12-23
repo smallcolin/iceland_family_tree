@@ -248,6 +248,7 @@ function allCountries() {
     foreach ($every_post as $single_post) {
       $date = date('d/m/Y');
       $birthday = get_post_meta($single_post->ID, 'date_of_birth', true);
+      $sex = get_post_meta($single_post->ID, 'sex', true);
 
       if($birthday != '') {
         $bday = date("d/m/Y", strtotime($birthday));
@@ -259,8 +260,10 @@ function allCountries() {
 
       if ($bday == $sub_date) {
         // Content for each post
-        $postTitle = 'Til Hamingju ' . $single_post->post_title . ', ' . $date;
-        $content = '<p>Í dag ertu ' . $age . ' ára gamall</p><p>Eigðu frábæran dag.</p>';
+        $postTitle = 'Til hamingju með daginn ' . $single_post->post_title . ', ' . $date;
+        $sex = ($sex == 'female') ? 'gömul' : 'gamall';
+
+        $content = '<p>Í dag ertu ' . $age . ' ára ' . $sex . '</p><p>…attu frabaran dag</p>';
 
         $post_data = array(
           'post_title' => $postTitle,
