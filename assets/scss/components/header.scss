@@ -8,7 +8,7 @@
 	transition: 1s ease-out;
 
 	h2 {
-		font-size: 18px;
+		font-size: 14px;
 		margin: 0;
 		padding-left: 0;
 		line-height: 50px;
@@ -63,6 +63,7 @@
 	}
 
 	.search-icon {
+		padding-left: 0;
 		.fa-search,
 		.fa-ellipsis-h {
 			line-height: 50px;
@@ -183,7 +184,7 @@
 @media ( min-width: 992px ) {
 	#header {
 		h2 {
-			font-size: 24px;
+			font-size: 22px;
 			line-height: 50px;
 		}
 		.search-icon {
