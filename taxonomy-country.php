@@ -20,17 +20,19 @@
                 //echo all terms link here
                 // echo '"><li>' . 'All' . '</li></a>';
                 foreach ($terms as $term) {
-                  $class = $currentterm->slug == $term->slug ? 'current-term' : '' ;
-                  echo '<a href="';
-                  echo esc_url(get_term_link($term));
-                  echo '">';
-                  echo '<li class="' . $class . '">' . esc_html($term->name) . '</li>';
-                  echo '</a>';
+                  if ($term->count > 0) {
+                    $class = $currentterm->slug == $term->slug ? 'current-term' : '' ;
+                    echo '<a href="';
+                    echo esc_url(get_term_link($term));
+                    echo '">';
+                    echo '<li class="' . $class . '">' . esc_html($term->name) . '</li>';
+                    echo '</a>';
+                  }
                 }
                 echo '</ul>';
               }
             ?>
-            <h2><?php single_term_title("Country of residence: "); ?></h2>
+            <h2><?php single_term_title("Land: "); ?></h2>
           </p>
         </div>
       </div>
@@ -81,7 +83,7 @@
         </div>
       </div>
         <?php else : ?>
-          <div class="no-entries">No entries were found for this country!</div>
+          <div class="no-entries">Ekkert fannst fyrir þetta land!</div>
         <?php endif; ?>
     </div>
   </section>
