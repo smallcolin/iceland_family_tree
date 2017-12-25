@@ -92,7 +92,23 @@
           <div class="family-box">
             <h3>
               <a href="<?php echo get_post_type_archive_link($post_type); ?>">
-              <?php echo ucfirst($post_type); ?>
+              <?php
+                switch ($post_type) {
+                  case 'siblings':
+                    $post_type_name = 'systkini';
+                    break;
+                  case 'children':
+                    $post_type_name = 'börn';
+                    break;
+                  case 'grandchildren':
+                    $post_type_name = 'barnabörn';
+                    break;
+                  case 'partners':
+                    $post_type_name = 'partners';
+                    break;
+                }
+              ?>
+              <?php echo ucfirst($post_type_name); ?>
               </a>
             </h3>
             <p>
