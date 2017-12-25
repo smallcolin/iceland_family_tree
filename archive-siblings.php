@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12 aligncenter">
-          <h1>Siblings</h1>
+          <h1>Systkini</h1>
         </div>
       </div>
       <div class="row">
