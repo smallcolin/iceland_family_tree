@@ -189,7 +189,7 @@ function allCountries() {
           <button class="btn btn-danger">
             <span class="pages">
               <i class="fa fa-caret-left" aria-hidden="true"></i>
-              <?php previous_posts_link('Previous'); ?>
+              <?php previous_posts_link('Fyrri'); ?>
             </span>
           </button>
         <?php endif; ?>
@@ -203,7 +203,7 @@ function allCountries() {
         <?php if (get_next_posts_link()) : ?>
           <button class="btn btn-danger">
             <span class="pages">
-              <?php next_posts_link('Next'); ?>
+              <?php next_posts_link('Næsta'); ?>
               <i class="fa fa-caret-right" aria-hidden="true"></i>
             </span>
           </button>
@@ -263,7 +263,7 @@ function allCountries() {
         $postTitle = 'Til hamingju með daginn ' . $single_post->post_title . ', ' . $date;
         $sex = ($sex == 'female') ? 'gömul' : 'gamall';
 
-        $content = '<p>Í dag ertu ' . $age . ' ára ' . $sex . '</p><p>…attu frabaran dag</p>';
+        $content = '<p>Í dag ertu ' . $age . ' ára ' . $sex . '</p><p>…áttu frábaran dag</p>';
 
         $post_data = array(
           'post_title' => $postTitle,
