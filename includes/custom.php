@@ -56,18 +56,18 @@ function cpt_taxonomy() {
       <table class="person-details">
         <tbody>
           <tr>
-            <td><h3>Name</h3></td>
+            <td><h3>Nafn</h3></td>
             <td class="right"><h3><?php if ( $name ) { echo $name; } ?></h3></td>
           </tr>
           <tr>
             <?php if ($dob) { ?>
-              <td>Date of Birth</td>
+              <td>Faðingardagur</td>
               <td class="right"><?php echo $dob; ?></td>
             <?php } ?>
           </tr>
           <tr>
             <?php if ($addy_1 || $addy_2) { ?>
-              <td>Address</td>
+              <td>Heimilisfang</td>
             <?php } ?>
             <td class="right"><?php if ( $addy_1 ) { echo $addy_1; } ?></td>
           </tr>
@@ -80,18 +80,18 @@ function cpt_taxonomy() {
             <td class="right"><?php if ( $postcode ) { echo $postcode; } ?></td>
           </tr>
           <tr>
-            <td>Lives</td>
+            <td>Býr</td>
             <td class="right"><?php echo cpt_taxonomy(); ?></td>
           </tr>
           <tr>
             <?php if ( $job ) { ?>
-              <td>Occupation</td>
+              <td>Vinir</td>
               <td class="right"><?php echo $job; ?></td>
             <?php } ?>
           </tr>
           <tr>
             <?php if ($partner) { ?>
-              <td>Partner</td>
+              <td>Býr með</td>
               <td class="right">
                 <a class="partner-link" href="<?php the_permalink($partner); ?>">
                   <?php echo get_the_title($partner); ?>
