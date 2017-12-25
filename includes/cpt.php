@@ -5,7 +5,7 @@
   function create_post_type() {
     register_post_type('siblings', array(
       'labels' => array(
-        'name' => 'Siblings',
+        'name' => 'Systkini',
         'singular_name' => 'Sibling'
       ),
       'public' => true,
@@ -16,7 +16,7 @@
     ));
     register_post_type('children', array(
       'labels' => array(
-        'name' => 'Children',
+        'name' => 'Börn',
         'singular_name' => 'Children'
       ),
       'public' => true,
@@ -27,7 +27,7 @@
     ));
     register_post_type('grandchildren', array(
       'labels' => array(
-        'name' => 'Grandchildren',
+        'name' => 'Barnabörn',
         'singular_name' => 'Grandchild'
       ),
       'public' => true,
