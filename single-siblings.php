@@ -131,7 +131,7 @@
                 </div>
               <?php else : ?>
                 <div class="slide-image" placeholder>
-                  <p class="no-info">No info available…</p>
+                  <p class="no-info">No info  d</p>
                 </div>
               <?php endif; ?>
             </article>

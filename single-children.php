@@ -20,7 +20,7 @@
         <div class="row"> <!-- Family members -->
           <div class="col-xs-12 col-sm-3 aligncenter">
             <!-- PARENT -->
-            <h3>Parents</h3>
+            <h3>Foreldrar</h3>
             <article class="slides">
               <?php if (have_rows('child_parents')) : ?>
                 <div class="swiper-container">
@@ -59,7 +59,7 @@
           </div>
           <div class="col-xs-12 col-sm-3 aligncenter">
             <!-- SIBLINGS -->
-            <h3>Siblings</h3>
+            <h3>Systkini</h3>
             <article class="slides">
               <?php if (have_rows('child_siblings')) : ?>
                 <div class="swiper-container">
@@ -98,7 +98,7 @@
           </div>
           <div class="col-xs-12 col-sm-3 aligncenter">
             <!-- CHILDREN -->
-            <h3>Children</h3>
+            <h3>Börn</h3>
             <article class="slides">
               <?php if (have_rows('child_children')) : ?>
                 <div class="swiper-container">
@@ -137,7 +137,7 @@
           </div>
           <div class="col-xs-12 col-sm-3 aligncenter">
             <!-- RELATIVES -->
-            <h3>Relatives</h3>
+            <h3>Attingjar</h3>
             <article class="slides">
               <?php if(have_rows('child_relatives')) : ?>
                 <div class="swiper-container">

@@ -20,7 +20,7 @@
       <div class="row">
         <div class="col-xs-12 col-sm-6 aligncenter">  <!-- Family members -->
           <!-- CHILDREN -->
-          <h3>Children</h3>
+          <h3>Börn</h3>
           <article class="slides">
             <?php if (have_rows('partner_children')) : ?>
               <div class="swiper-container">
@@ -59,7 +59,7 @@
         </div>
         <div class="col-xs-12 col-sm-6 aligncenter">
           <!-- GRANDCHILDREN -->
-          <h3>Grandchildren</h3>
+          <h3>Barnabörn</h3>
           <article class="slides">
             <?php if (have_rows('partner_grandchildren')) : ?>
               <div class="swiper-container">
