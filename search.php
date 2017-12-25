@@ -46,7 +46,7 @@
         <div class="container">
           <div class="row">
             <div class="col-xs-12 aligncenter">
-              No results have been found.  Try again?
+              Ekkert fannst. Leita aftur…
             </div>
           </div>
       	  <div class="row">
@@ -57,7 +57,7 @@
               <form class="repeat-searchform aligncenter" action="<?php bloginfo("url");?>" method="get" role="search">
                 <div class="inner-search">
                   <input type="text" name="s" id="search-input" placeholder=" ex. Eyrun, Idunn, etc" class="text-input" value="<?php echo $value; ?>" autofocus />
-                  <input class="btn btn-danger button detail submit-search" type="submit" value="Search" />
+                  <input class="btn btn-danger button detail submit-search" type="submit" value="Leita" />
                 </div>
               </form>
 
