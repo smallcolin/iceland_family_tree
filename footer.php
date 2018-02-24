@@ -4,7 +4,7 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-xs-12">
-						<p class="aligncenter">&copy; Colin Sweeney <?php echo date('Y'); ?></p>
+						<p class="aligncenter">&copy; Colin Sweeney 2017-<?php echo date('y'); ?></p>
 					</div>
 				</div>
 			</div>
