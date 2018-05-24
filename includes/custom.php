@@ -235,6 +235,30 @@ function allCountries() {
     <?php }
   }
 
+  // Another gallery that gets thumbnails from every post
+
+  function another_gallery() {
+    $every_post = get_posts(array(
+      'post_type' => array('siblings', 'children', 'grandchildren', 'partners'),
+      'posts_per_page' => -1,
+      'numberposts' => -1
+    )); ?>
+    
+    <div class="another-gallery-container">
+      <?php foreach ($every_post as $single_post) {
+        $image_array = get_post_meta($single_post->image);
+        $uri = $image_array['_wp_attached_file']['0'];
+        $upload_dir = wp_upload_dir();
+        $image = trailingslashit( $upload_dir['baseurl']) . $uri;
+        
+        if ($uri) { ?>
+          <div class="gallery-image" style="background-image: url('<?php echo $image; ?>');">
+          </div>
+        <?php }
+      } ?>
+      </div>
+  <?php }
+
   // Birthday
 
   function birthday() {

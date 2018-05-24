@@ -27,6 +27,17 @@ section.gallery {
       }
     }
   }
+  .another-gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .gallery-image {
+      background-size: cover;
+      width: 100%;
+      height: 300px;
+      margin-bottom: 10px;
+    }
+  }
 }
 
 #fade {
@@ -68,12 +79,23 @@ section.gallery {
         }
       }
     }
+    .another-gallery-container {
+      .gallery-image {
+        width: calc(100% / 3);
+        height: 150px;
+      }
+    }
   }
 }
 
 @media ( min-width: 992px ) {
   section.gallery {
     margin: 70px 0 100px;
+    .another-gallery-container {
+      .gallery-image {
+        width: calc(100% / 4);
+      }
+    }
   }
 
   #modal {
