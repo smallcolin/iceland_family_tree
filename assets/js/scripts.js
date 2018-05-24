@@ -83,11 +83,13 @@
 
 // Gallery modal
 
-	var picture = '.gallery-list li img';
+	// var picture = '.gallery-list li img';
+	var picture = '.another-gallery-container .gallery-image';
 
 	// Enlarge image
 	$(picture).click(function() {
-		var src = $(this).data("url");
+		var style = $(this).attr("style");
+		let src = style.substring(23, style.length -3);
 
 		$("#modal img").attr("src", src);
 		$("#fade").show();

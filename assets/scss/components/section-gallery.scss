@@ -63,7 +63,8 @@ section.gallery {
   img {
     display: none;
     margin: 0 auto;
-    max-width: 80%;
+    width: 100%;
+    max-width: 300px;
     z-index: 180;
   }
 }
@@ -100,7 +101,7 @@ section.gallery {
 
   #modal {
     img {
-      max-width: 60%;
+      max-width: 500px;
     }
   }
 }
