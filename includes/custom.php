@@ -245,7 +245,11 @@ function allCountries() {
     )); ?>
     
     <div class="another-gallery-container">
-      <?php foreach ($every_post as $single_post) {
+      <?php 
+        // Randomize the gallery
+        shuffle($every_post); 
+        // Display the images
+        foreach ($every_post as $single_post) {
         $image_array = get_post_meta($single_post->image);
         $uri = $image_array['_wp_attached_file']['0'];
         $upload_dir = wp_upload_dir();
